@@ -188,9 +188,9 @@
       "sha256": "0c8d70b9a53ce59c9e210004ea22cb9cfa2f81a42a8f0988cf9aff2bc3fb8a7b"
     },
     {
-      "bytes": 5473,
+      "bytes": 1145459,
       "path": "docs/steward-architecture.pdf",
-      "sha256": "1c658bfbfad763a617b36ddba5e5de2f1b5092e18841eb78eee42a0779549cd8"
+      "sha256": "508bfaf2e950f64c92d04f51f3829a6fd5b81ace2141bae51c178ca43ff54884"
     },
     {
       "bytes": 1354,
@@ -1304,7 +1304,7 @@
   },
   "purpose": "Reviewed public repository source snapshot",
   "schema_version": 1,
-  "source_sha256": "0b5b3c5da2507ec708265953849f488ea6b71af3e88a3072d51105786b16715d",
+  "source_sha256": "e07f4c717a4a9a31bf7ac079da6f2122e491f460346d5fea9f12d1c8d4eb565c",
   "validation": {
     "acceptance_run": "20260914T070421Z-d15d2654",
     "passed": 180,
