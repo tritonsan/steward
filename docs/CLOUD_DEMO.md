@@ -7,7 +7,44 @@ no domain registration is required. The expected small-demo budget is approximat
 USD 120–155/month before credits, with inference and traffic dependent on usage.
 This is an estimate, not a spending cap. Other account workloads are separate.
 
+## Public, jury and community access
+
+The existing CloudFront distribution serves three entry points:
+
+| Entry point | Purpose | Access and effects |
+| --- | --- | --- |
+| [`/?mode=preview`](https://d35nbywkoth58f.cloudfront.net/?mode=preview) | Public interactive introduction | No registration. Fictional records and actions remain in the browser session; no live model or channel calls. |
+| [`/?mode=judge`](https://d35nbywkoth58f.cloudfront.net/?mode=judge) | Working evaluation workspace | Dedicated review code, manager/resident views, separate synthetic data and simulated email/Telegram delivery. |
+| [`/?mode=member`](https://d35nbywkoth58f.cloudfront.net/?mode=member) | Existing community application | Existing Cognito membership and the owner's configured operational channels. |
+
+The jury runtime shares the existing API/worker infrastructure and RDS instance,
+but uses the separate `steward_review` operational schema. It does not copy owner
+cases, Telegram identities, live mailbox input or channel credentials. Both outbound
+channels are independently disabled in its runtime composition; the owner's
+`telegramDeliveryMode=live` setting does not enable delivery from the jury workspace.
+New model-dependent jury input uses the configured model adapters and can incur
+inference usage. Prepared examples are labelled deterministic fixtures.
+
+The routes and operator procedure below describe the implementation. A successful
+deployment and separate access checks are required before reporting live validation.
+See [JURY_DEMO.md](JURY_DEMO.md) for the dataset, test route and disclosure boundaries.
+
 ## Deployment
+
+Before first enabling jury access, configure its dedicated code while the existing
+stack is in `CREATE_COMPLETE` or `UPDATE_COMPLETE`:
+
+```powershell
+.venv/Scripts/python.exe tools/cloud_review.py configure
+```
+
+This preserves the existing member registry and adds a reserved review-code field
+to that Secrets Manager secret. It reuses a valid existing code on later runs and
+refuses automatic rotation of an invalid one. It does not send email, create a
+Cognito account, restart services or create infrastructure. The private access URL
+and code are saved only in `.scratch/steward-review-access.local.json`; a first-change
+registry backup is also private under `.scratch`. Never print these files into logs,
+include them in source archives, or use the owner's manager credentials for judges.
 
 The existing Dockerfiles are built in CodeBuild when local Docker is unavailable:
 
@@ -31,7 +68,7 @@ After both builds succeed:
 npm --prefix web run build
 $buildState = Get-Content '.scratch/cloud-build.local.json' -Raw | ConvertFrom-Json
 $demoClock = .venv/Scripts/python.exe -c "import json; print(json.load(open('.scratch/cloud-build.local.json'))['demoClock'])"
-npm exec --yes --package aws-cdk -- cdk synth --app '.venv\Scripts\python.exe infra\app.py' --output infra/cdk.live.out --context mailEnabled=true --context telegramDeliveryMode=live --context "demoClock=$demoClock" --context "applicationImageUri=$($buildState.applicationImageUri)" --context "inferenceImageUri=$($buildState.inferenceImageUri)" --quiet
+npm exec --yes --package aws-cdk -- cdk synth --app '.venv\Scripts\python.exe infra\app.py' --output infra/cdk.live.out --context mailEnabled=true --context telegramDeliveryMode=live --context reviewEnabled=true --context "demoClock=$demoClock" --context "applicationImageUri=$($buildState.applicationImageUri)" --context "inferenceImageUri=$($buildState.inferenceImageUri)" --quiet
 npm exec --yes --package aws-cdk -- cdk deploy StewardNorthgateLive --app infra/cdk.live.out --rollback --require-approval never --parameters MailDomain=steward.narrativenode-labs.cloud --outputs-file .scratch/steward-cloud-outputs.local.json
 ```
 
@@ -43,7 +80,56 @@ resources for repair. `mailEnabled=true` creates the owned Steward subdomain ide
 and receipt rules; DNS verification and controlled vendor addresses are still required.
 See `STEWARD_MAIL_DNS.md` and `LIVE_READINESS.md` for outstanding provider checks.
 
-## Initialize and verify
+Preserve **all three existing contexts** on subsequent deployments:
+`mailEnabled=true`, `telegramDeliveryMode=live` and `reviewEnabled=true`. Review
+enablement supplies the dedicated code to the API/worker and adds the CloudFront
+`review/api/*` behavior. Omitting it can remove jury access even if the public
+frontend continues to load. Do not switch the owner's live channels to simulated
+delivery to isolate jury activity; the review runtime already enforces its own
+channel boundary.
+
+## Prepare and check the jury workspace
+
+After the review-enabled stack reaches `UPDATE_COMPLETE` and its services are
+healthy, explicitly prepare the isolated examples:
+
+```powershell
+.venv/Scripts/python.exe tools/cloud_review.py bootstrap
+.venv/Scripts/python.exe tools/cloud_review.py status
+```
+
+`bootstrap` starts a one-off Fargate task using the deployed worker definition,
+network and packaged `steward.demo.review_seed` command. It refuses a worker that
+does not have review enabled. Wait for this task to reach `STOPPED` with container
+exit code `0` before attempting dependent checks. `status` reports the last
+bootstrap task started from this checkout; it is not a full application health or
+access check. All three cloud-review commands require a stable completed stack,
+so wait for any deployment in progress before running them.
+
+Preparation does not reset existing jury changes. A completed preparation is
+idempotent; incomplete or already-used data is checked before it can resume. The
+worker and sign-in route wait for the completed preparation marker. Normal
+application startup never reloads these examples.
+
+Before supplying the jury link and dedicated code in the appropriate Devpost
+testing field, verify the following separately:
+
+- Anonymous public preview works and its actions make no operational API calls.
+- Correct review-code sign-in opens the prepared cases; incorrect codes fail.
+- Manager and resident views expose their respective tasks and permissions.
+- A synthetic input is processed by the deployed worker in the review store, with
+  email and Telegram delivery recorded as simulation.
+- Review credentials cannot read the owner API or alter its cases or channel
+  bindings; the existing member sign-in still works.
+
+Keep the code out of public source, screenshots, URLs/query strings and the public
+preview bundle. Check the submission field's visibility before entering it. The
+review workspace is shared by judges, so later reviewers may see actions already
+completed; their timelines remain available. Do not rerun owner bootstrap or rotate
+review access as a routine reset. Maintain functional access through the judging
+period described in [JURY_DEMO.md](JURY_DEMO.md).
+
+## Initialize and verify the owner community
 
 ```powershell
 .venv/Scripts/python.exe tools/cloud_operations.py status
@@ -98,6 +184,11 @@ simulated notices are not replayed when enabling the channel. See
 [TELEGRAM_DELIVERY_REVIEW](TELEGRAM_DELIVERY_REVIEW.md).
 
 ## Recovery and eventual shutdown
+
+The isolated public/jury access release was verified on September 14. See
+[JURY_DEMO](JURY_DEMO.md#hosted-verification--14-september-2026) for preparation,
+access-boundary checks and a worker-processed synthetic message. The existing
+owner/member login remains available at `?mode=member`.
 
 RDS is private, encrypted, has seven-day backup retention, and deletion protection.
 API and worker deployment circuit breakers detect unhealthy revisions. The initial

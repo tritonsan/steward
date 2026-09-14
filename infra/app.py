@@ -288,6 +288,9 @@ class StewardStack(Stack):
         if telegram_delivery not in ("dry_run", "live"):
             raise ValueError("telegramDeliveryMode must be dry_run or live")
         base_environment["STEWARD_TELEGRAM_DELIVERY_MODE"] = telegram_delivery
+        review_enabled = self.node.try_get_context("reviewEnabled") == "true"
+        if review_enabled:
+            base_environment["STEWARD_REVIEW_ENABLED"] = "true"
         base_environment["STEWARD_COGNITO_DOMAIN"] = (
             domain.domain_name + f".auth.{self.region}.amazoncognito.com"
         )
@@ -316,6 +319,15 @@ class StewardStack(Stack):
                     "STEWARD_DATABASE_SECRET": ecs.Secret.from_secrets_manager(database.secret),
                     "STEWARD_MEMBERS": ecs.Secret.from_secrets_manager(members),
                     "STEWARD_CHANNEL_CONFIGURATION": ecs.Secret.from_secrets_manager(channels),
+                    **(
+                        {
+                            "STEWARD_REVIEW_ACCESS_CODE": ecs.Secret.from_secrets_manager(
+                                members, "__review_access_code"
+                            )
+                        }
+                        if review_enabled
+                        else {}
+                    ),
                 },
                 logging=ecs.LogDrivers.aws_logs(stream_prefix=name, log_group=group),
             )
@@ -404,6 +416,18 @@ class StewardStack(Stack):
             versioned=True,
             removal_policy=RemovalPolicy.RETAIN,
         )
+        api_origin = origins.VpcOrigin.with_application_load_balancer(
+            alb,
+            protocol_policy=cf.OriginProtocolPolicy.HTTP_ONLY,
+            read_timeout=Duration.seconds(60),
+        )
+        api_behavior = cf.BehaviorOptions(
+            origin=api_origin,
+            cache_policy=cf.CachePolicy.CACHING_DISABLED,
+            origin_request_policy=cf.OriginRequestPolicy.ALL_VIEWER_EXCEPT_HOST_HEADER,
+            allowed_methods=cf.AllowedMethods.ALLOW_ALL,
+            viewer_protocol_policy=cf.ViewerProtocolPolicy.HTTPS_ONLY,
+        )
         distribution = cf.Distribution(
             self,
             "Console",
@@ -413,17 +437,8 @@ class StewardStack(Stack):
                 viewer_protocol_policy=cf.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
             ),
             additional_behaviors={
-                "api/*": cf.BehaviorOptions(
-                    origin=origins.VpcOrigin.with_application_load_balancer(
-                        alb,
-                        protocol_policy=cf.OriginProtocolPolicy.HTTP_ONLY,
-                        read_timeout=Duration.seconds(60),
-                    ),
-                    cache_policy=cf.CachePolicy.CACHING_DISABLED,
-                    origin_request_policy=cf.OriginRequestPolicy.ALL_VIEWER_EXCEPT_HOST_HEADER,
-                    allowed_methods=cf.AllowedMethods.ALLOW_ALL,
-                    viewer_protocol_policy=cf.ViewerProtocolPolicy.HTTPS_ONLY,
-                )
+                "api/*": api_behavior,
+                **({"review/api/*": api_behavior} if review_enabled else {}),
             },
         )
         cloudfront_group_lookup = cr.AwsCustomResource(

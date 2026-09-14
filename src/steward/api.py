@@ -20,6 +20,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from steward.domain.clock import parse_datetime
 from steward.domain.enums import TERMINAL_STATUSES, CaseStatus, Category
 from steward.domain.models import ApprovalPolicy, GlobalSettings, ResidentMessage
+from steward.review import ReviewSessionRequest
 from steward.runtime import build_runtime
 from steward.store import ConcurrencyConflict, IdempotencyConflict, InboxItem, WorkflowArtifact
 from steward.store.workflow import stable_id
@@ -78,17 +79,56 @@ class SettingsUpdate(BaseModel):
     policies: dict[Category, ApprovalPolicy]
 
 
-def create_app(runtime=None, *, tokens: dict[str, dict] | None = None, simulation=None):
+def create_app(
+    runtime=None,
+    *,
+    tokens: dict[str, dict] | None = None,
+    simulation=None,
+    auth_environment=True,
+    review_runtime=None,
+    review_access_code=None,
+    review_enabled=None,
+):
     if simulation is None:
         simulation = os.getenv("STEWARD_SIMULATION") == "true"
     owned = runtime is None
     runtime = runtime or build_runtime()
+    isolated = runtime._settings.review_isolated
+    auth_environment = auth_environment and not isolated
     configured_tokens = (
-        tokens if tokens is not None else json.loads(os.getenv("STEWARD_API_TOKENS", "{}"))
+        tokens
+        if tokens is not None
+        else json.loads(os.getenv("STEWARD_API_TOKENS", "{}"))
+        if auth_environment
+        else {}
     )
-    members = json.loads(os.getenv("STEWARD_MEMBERS", "{}"))
-    issuer = os.getenv("STEWARD_COGNITO_ISSUER")
-    client_id = os.getenv("STEWARD_COGNITO_CLIENT_ID")
+    members = {
+        subject: actor
+        for subject, actor in (
+            json.loads(os.getenv("STEWARD_MEMBERS", "{}")) if auth_environment else {}
+        ).items()
+        if not subject.startswith("__")
+        and isinstance(actor, dict)
+        and "actor_id" in actor
+        and "role" in actor
+    }
+    issuer = os.getenv("STEWARD_COGNITO_ISSUER") if auth_environment else None
+    client_id = os.getenv("STEWARD_COGNITO_CLIENT_ID") if auth_environment else None
+    review_access = None
+    review_owned = False
+    if not isolated and (
+        review_enabled
+        if review_enabled is not None
+        else os.getenv("STEWARD_REVIEW_ENABLED") == "true"
+    ):
+        from steward.review import ReviewAccess, assert_review_boundary, build_review_runtime
+
+        code = review_access_code or os.getenv("STEWARD_REVIEW_ACCESS_CODE")
+        if code:
+            review_access = ReviewAccess(code)
+            review_owned = review_runtime is None
+            review_runtime = review_runtime or build_review_runtime(runtime._settings)
+            assert_review_boundary(review_runtime)
     jwks = None
     if issuer and client_id:
         from jwt import PyJWKClient
@@ -100,14 +140,19 @@ def create_app(runtime=None, *, tokens: dict[str, dict] | None = None, simulatio
         yield
         if owned:
             runtime.close()
+        if review_owned:
+            review_runtime.close()
 
     app = FastAPI(title="Steward", version="0.2.0", lifespan=lifespan)
     app.state.runtime = runtime
+    app.state.review_runtime = review_runtime
 
     def principal(authorization: str = Header(default="")):
         token = authorization.removeprefix("Bearer ")
+        if not isolated and token.startswith("review.v1."):
+            raise HTTPException(401, "Use the judging workspace for this session")
         for expected, actor in configured_tokens.items():
-            if hmac.compare_digest(token, expected):
+            if hmac.compare_digest(token.encode(), expected.encode()):
                 return Principal.model_validate(actor)
         if jwks:
             import jwt
@@ -343,9 +388,30 @@ def create_app(runtime=None, *, tokens: dict[str, dict] | None = None, simulatio
     @app.get("/api/auth/config")
     def auth_configuration():
         return {
-            "domain": os.getenv("STEWARD_COGNITO_DOMAIN"),
-            "client_id": os.getenv("STEWARD_COGNITO_CLIENT_ID"),
+            "domain": os.getenv("STEWARD_COGNITO_DOMAIN") if auth_environment else None,
+            "client_id": client_id,
         }
+
+    @app.get("/api/review/config")
+    def review_configuration():
+        return {"enabled": review_access is not None}
+
+    @app.post("/api/review/session")
+    def review_session(body: ReviewSessionRequest, request: Request):
+        from fastapi.responses import JSONResponse
+
+        if review_access is None:
+            raise HTTPException(404, "Judging workspace is not enabled")
+        result = review_access.session(body, request.client.host if request.client else "unknown")
+        from steward.review import review_ready
+
+        if not review_ready(review_runtime):
+            raise HTTPException(
+                503,
+                "The judging workspace is being prepared. Please try again shortly.",
+                headers={"Retry-After": "30", "Cache-Control": "no-store"},
+            )
+        return JSONResponse(result, headers={"Cache-Control": "no-store"})
 
     @app.post("/api/channels/telegram")
     def telegram_ingress(
@@ -392,6 +458,8 @@ def create_app(runtime=None, *, tokens: dict[str, dict] | None = None, simulatio
     def link_telegram(actor=Depends(principal)):
         from steward.channels.private_telegram import PrivateTelegram
 
+        if isolated:
+            raise HTTPException(403, "External channels are simulated in the judging workspace")
         if actor.role == "manager":
             manager(actor)
         else:
@@ -414,6 +482,8 @@ def create_app(runtime=None, *, tokens: dict[str, dict] | None = None, simulatio
     def telegram_group_command(body: TelegramGroupCommand, actor=Depends(manager)):
         from steward.channels.telegram_groups import TelegramGroups
 
+        if isolated:
+            raise HTTPException(403, "External channels are simulated in the judging workspace")
         groups = TelegramGroups(runtime)
         if body.action == "connect":
             return groups.issue(actor.actor_id, body.expected_version)
@@ -1510,6 +1580,10 @@ def create_app(runtime=None, *, tokens: dict[str, dict] | None = None, simulatio
     def tick(_actor=Depends(manager)):
         if not simulation or runtime.execution_mode.value != "dry_run":
             raise HTTPException(403, "Simulation is disabled")
+        if isolated:
+            from steward.review import tick_review
+
+            return tick_review(runtime)
         return runtime.tick()
 
     @app.post("/api/simulation/vendor-replies")
@@ -1554,6 +1628,19 @@ def create_app(runtime=None, *, tokens: dict[str, dict] | None = None, simulatio
             raise ValueError("advance must be between 1 and 168 hours")
         runtime._clock.advance(timedelta(hours=hours))
         return {"now": runtime._clock.now()}
+
+    if review_access:
+        app.mount(
+            "/review",
+            create_app(
+                review_runtime,
+                tokens=review_access.tokens,
+                simulation=True,
+                auth_environment=False,
+                review_enabled=False,
+            ),
+            name="review",
+        )
 
     web_root = Path(
         os.getenv("STEWARD_WEB_ROOT", str(Path(__file__).resolve().parents[2] / "web" / "dist"))

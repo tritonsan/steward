@@ -26,6 +26,8 @@ import { VendorSimulation } from "./VendorSimulation";
 import { ResidentDesk } from "./ResidentDesk";
 import { MeetingPanel } from "./MeetingPanel";
 import { startSignIn, finishSignIn, type AuthConfig } from "./auth";
+import PublicPreview from "./PublicPreview";
+import { ReviewAccess, type ReviewSession } from "./ReviewAccess";
 import {
   needsManagerAction,
   taskActionLabel,
@@ -127,7 +129,14 @@ const pages = [
   ["Settings", Settings],
 ] as const;
 
-function App() {
+function App({
+  reviewSession,
+  onReviewSignOut,
+}: {
+  reviewSession?: ReviewSession;
+  onReviewSignOut?: () => void;
+}) {
+  const apiBase = reviewSession ? "/review/api" : "/api";
   const [role, setRole] = useState("manager");
   const [actorId, setActorId] = useState("");
   const [token, setToken] = useState(""),
@@ -161,7 +170,7 @@ function App() {
   const requestKey = useRef<string | null>(null),
     panel = useRef<HTMLDivElement>(null);
   async function api(path: string, options: RequestInit = {}, auth = token) {
-    const r = await fetch("/api" + path, {
+    const r = await fetch(apiBase + path, {
       ...options,
       headers: {
         Authorization: "Bearer " + auth,
@@ -178,6 +187,7 @@ function App() {
         setToken("");
         setSelected(null);
         setEvidence(null);
+        onReviewSignOut?.();
       }
       const failure = new Error(
         r.status === 401 && signedIn
@@ -256,14 +266,21 @@ function App() {
     setAuthLoading(true);
     setError("");
     try {
-      const response = await fetch("/api/auth/config");
+      if (reviewSession) {
+        await establish(reviewSession.token);
+        return;
+      }
+      const response = await fetch(apiBase + "/auth/config");
       if (!response.ok)
         throw new Error("Sign-in is temporarily unavailable. Please retry.");
       const config = await response.json();
       setAuthConfig(config);
       if (config.domain) {
         const auth = await finishSignIn(config);
-        if (auth) await establish(auth);
+        if (auth) {
+          history.replaceState({}, "", "?mode=member");
+          await establish(auth);
+        }
       }
     } catch (e) {
       setError((e as Error).message);
@@ -286,7 +303,7 @@ function App() {
     let timer: ReturnType<typeof setTimeout>;
     async function subscribe() {
       try {
-        const r = await fetch("/api/events", {
+        const r = await fetch(apiBase + "/events", {
           headers: { Authorization: "Bearer " + token },
           signal: controller.signal,
         });
@@ -486,6 +503,27 @@ function App() {
     setMobileNav(false);
     setNotice("");
   };
+  if (!signedIn && reviewSession)
+    return (
+      <main className="review-login-card">
+        <h1>
+          {authLoading ? "Opening your desk…" : "Unable to open your desk"}
+        </h1>
+        {error && (
+          <p role="alert" className="error">
+            {error}
+          </p>
+        )}
+        {!authLoading && (
+          <>
+            <button onClick={configureSignIn}>Retry</button>{" "}
+            <button className="secondary" onClick={onReviewSignOut}>
+              Return to judge sign-in
+            </button>
+          </>
+        )}
+      </main>
+    );
   if (!signedIn)
     return (
       <main className="login">
@@ -507,6 +545,7 @@ function App() {
           </div>
           <h2>Welcome back.</h2>
           <p>Sign in to your Northgate workspace.</p>
+          <a href="?mode=preview">Explore the public preview</a>
           {authConfig && !authConfig.domain && (
             <label>
               Local access token
@@ -553,9 +592,11 @@ function App() {
     return (
       <ResidentDesk
         api={api}
+        channelsEnabled={!reviewSession}
         onSignOut={() => {
           setToken("");
           setSignedIn(false);
+          onReviewSignOut?.();
         }}
       />
     );
@@ -615,6 +656,7 @@ function App() {
               setToken("");
               setDraftToken("");
               setSignedIn(false);
+              onReviewSignOut?.();
             }}
           >
             <LogOut size={16} /> Sign out
@@ -914,7 +956,15 @@ function App() {
               )}
             </>
           )}
-          {page === "Settings" && <ChannelSettings api={api} />}
+          {page === "Settings" && !reviewSession && (
+            <ChannelSettings api={api} />
+          )}
+          {page === "Settings" && reviewSession && (
+            <p className="notice">
+              This review workspace records simulated deliveries. Live channel
+              connections belong to the member workspace.
+            </p>
+          )}
           {page === "Settings" && settings && (
             <>
               <section className="settings-panel">
@@ -1510,8 +1560,32 @@ function App() {
     </div>
   );
 }
+function EntryPoint() {
+  const query = new URLSearchParams(location.search);
+  const mode = query.get("mode");
+  if (mode === "judge")
+    return (
+      <ReviewAccess>
+        {(session, signOut) => (
+          <App
+            key={session.token}
+            reviewSession={session}
+            onReviewSignOut={signOut}
+          />
+        )}
+      </ReviewAccess>
+    );
+  if (mode === "member" || query.has("code") || query.has("error"))
+    return <App />;
+  return (
+    <PublicPreview
+      onJudgeAccess={() => location.assign("?mode=judge")}
+      onMemberSignIn={() => location.assign("?mode=member")}
+    />
+  );
+}
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <EntryPoint />
   </React.StrictMode>,
 );

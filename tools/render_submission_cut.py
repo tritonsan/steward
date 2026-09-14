@@ -7,6 +7,7 @@ import html
 import json
 import re
 import subprocess
+import shutil
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,6 +54,8 @@ def load():
 
 
 def source(shot):
+    if 'file' in shot:
+        return ROOT / shot['file']
     if shot['source'] == 'opening':
         return INTRO
     if shot['source'] == 'closing':
@@ -77,6 +80,8 @@ def heading(shot):
 
 def render_shot(shot):
     p = OUT / 'parts' / f"{shot['index']:02}-{shot['source']}.mp4"
+    if shot['source'] == 'telegram_original':
+        return render_telegram(shot, p)
     if shot['source'] == 'closing':
         inputs = ['-loop', '1', '-framerate', '30', '-i', str(ENDCARD)]
         vf = 'format=yuv420p,setsar=1,fade=t=in:st=0:d=0.5:color=white'
@@ -105,6 +110,48 @@ def render_shot(shot):
     return p
 
 
+def render_telegram(shot, target):
+    # Editorial video composition of the supplied screenshot. Its message,
+    # timestamps, participant count and delivery marks remain source pixels.
+    original = Image.open(source(shot)).convert('RGB')
+    assert original.size == (576, 1280)
+    phone = original.resize((421, 936), Image.Resampling.LANCZOS)
+    detail = original.crop((64, 874, 571, 1121))
+    header = Image.open(heading(shot))
+    headline = ImageFont.truetype(BOLD, 58)
+    note = ImageFont.truetype(FONT, 27)
+    label_font = ImageFont.truetype(BOLD, 21)
+    args = ['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','1920x1080','-r','30','-i','pipe:0',
+            '-an','-c:v','libx264','-threads','4','-preset','fast','-crf','18','-pix_fmt','yuv420p',
+            '-video_track_timescale','15360','-movflags','+faststart',str(target)]
+    process = subprocess.Popen(args, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+    try:
+        for n in range(shot['frames']):
+            progress = n / max(1, shot['frames']-1)
+            ease = progress*progress*(3-2*progress)
+            frame = Image.new('RGB', (1920,1080),'#092c3a')
+            frame.paste(phone, (92,104))
+            dr = ImageDraw.Draw(frame)
+            dr.text((620,156),'Residents keep talking.',font=headline,fill='#f4f6ef')
+            dr.text((620,231),'Steward keeps track.',font=headline,fill='#c8d8b1')
+            dr.text((624,329),'The conversation already happens in Telegram.',font=note,fill='#d0ddd7')
+            dr.text((624,407),'THE ORIGINAL MESSAGE',font=label_font,fill='#c8d8b1')
+            # Gentle camera push on the original bubble; no fake typing or sending.
+            width = round(1126 + 32*ease)
+            height = round(width*detail.height/detail.width)
+            zoomed = detail.resize((width,height),Image.Resampling.LANCZOS)
+            frame.paste(zoomed,(round(624-16*ease),round(466-8*ease)))
+            frame.paste(header,(0,0),header)
+            process.stdin.write(frame.tobytes())
+    finally:
+        process.stdin.close()
+    stderr = process.stderr.read().decode('utf8',errors='replace')
+    if process.wait():
+        raise RuntimeError(stderr)
+    print(f"Rendered {shot['index']:02} original Telegram message {shot['duration']}s",flush=True)
+    return target
+
+
 def documents(d):
     cues = ['WEBVTT', '']
     srt = []
@@ -129,7 +176,7 @@ def documents(d):
     (OUT/'voiceover/VOICEOVER_EN.md').write_text('\n'.join(md), encoding='utf8')
     (OUT/'narration-guide.vtt').write_text('\n'.join(cues), encoding='utf8')
     (OUT/'narration-guide.srt').write_text('\n'.join(srt), encoding='utf8')
-    meta = [';FFMETADATA1', 'title=Steward - editorial cut v1', 'comment=Local simulated product workflows and separate recorded verification. Narration work in progress.']
+    meta = [';FFMETADATA1', f"title=Steward - editorial cut v{d['version']}", 'comment=Recorded Telegram message, product walkthrough and separate recorded verification. Narration work in progress.']
     for c in d['chapters']:
         meta += ['[CHAPTER]', 'TIMEBASE=1/1000', f"START={round(c['start']*1000)}", f"END={round(c['end']*1000)}", f"title={c['title']}"]
     (OUT/'chapters.ffmeta').write_text('\n'.join(meta)+'\n', encoding='utf8')
@@ -156,7 +203,7 @@ def assemble(d, overview_audio=False):
     d['audio_status'] = 'Opening plus user-confirmed overview recording; later narration pending' if overview_audio else 'Original approved opening audio only; post-opening narration pending'
     d['sources'] = {str(source(s).relative_to(ROOT)): sha(source(s)) for s in d['shots']}
     d['output_sha256'] = sha(movie)
-    d['transform_policy'] = 'Real recorded frames; straight cuts and explicit overview speed-up. Editorial title band outside the scaled image. Any crop recorded per shot. Original raw/select files unchanged. Closing uses approved logo card.'
+    d['transform_policy'] = 'Recorded product frames and supplied original Telegram screenshot; straight cuts and labelled speed-up. Telegram screenshot is shown whole beside a moving enlarged crop of its original message pixels; no content, time, sender or delivery state altered. Editorial title band outside scaled recordings. Any crop recorded per shot. Raw/select files unchanged. Closing uses approved logo card.'
     (OUT/'edit-manifest.json').write_text(json.dumps(d, indent=2, ensure_ascii=False)+'\n', encoding='utf8')
     print(f'ASSEMBLED {movie}', flush=True)
 
@@ -189,12 +236,30 @@ def qa(d):
 
 
 if __name__ == '__main__':
-    ap=argparse.ArgumentParser();ap.add_argument('--render',action='store_true');ap.add_argument('--assemble',action='store_true');ap.add_argument('--qa',action='store_true');ap.add_argument('--overview-audio',action='store_true');ap.add_argument('--only',type=int)
+    ap=argparse.ArgumentParser();ap.add_argument('--render',action='store_true');ap.add_argument('--assemble',action='store_true');ap.add_argument('--qa',action='store_true');ap.add_argument('--overview-audio',action='store_true');ap.add_argument('--only',type=int);ap.add_argument('--output');ap.add_argument('--reuse-from')
     args=ap.parse_args()
+    if args.output:
+        OUT = (ROOT/args.output).resolve()
+        assert OUT.is_relative_to(ROOT/'artifacts/video/coverage-session')
     for folder in ['parts','graphics','qa','voiceover']:(OUT/folder).mkdir(parents=True,exist_ok=True)
     d=load();documents(d)
     if args.render:
         shots=[s for s in d['shots'] if args.only is None or s['index']==args.only]
+        if args.reuse_from:
+            previous=(ROOT/args.reuse_from).resolve()
+            prior=json.loads((previous/'edit-manifest.json').read_text(encoding='utf8'))
+            signature=lambda s: {k:v for k,v in s.items() if k not in ('index','start','end','frames')}
+            todo=[]
+            for s in shots:
+                match=next((old for old in prior['shots'] if signature(old)==signature(s)),None)
+                if match:
+                    oldfile=previous/'parts'/f"{match['index']:02}-{match['source']}.mp4"
+                    newfile=OUT/'parts'/f"{s['index']:02}-{s['source']}.mp4"
+                    shutil.copy2(oldfile,newfile)
+                    assert sha(oldfile)==sha(newfile)
+                else:todo.append(s)
+            print(f'Reused {len(shots)-len(todo)} unchanged encoded parts',flush=True)
+            shots=todo
         with ThreadPoolExecutor(max_workers=3) as pool:
             for f in as_completed([pool.submit(render_shot,s) for s in shots]):f.result()
     if args.assemble:assemble(d,args.overview_audio)

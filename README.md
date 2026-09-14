@@ -12,12 +12,20 @@ Built with the [Strands Agents SDK](https://strandsagents.com/) for the AWS Agen
 > See [current readiness](docs/LIVE_READINESS.md) and
 > [implementation evidence](IMPLEMENTATION.md).
 
-[Hosted application](https://d35nbywkoth58f.cloudfront.net/) ·
+[Public preview](https://d35nbywkoth58f.cloudfront.net/?mode=preview) ·
+[Judge workspace](https://d35nbywkoth58f.cloudfront.net/?mode=judge) ·
 [Architecture](docs/ARCHITECTURE.md) / [diagram PDF](docs/steward-architecture.pdf) · [Verification](docs/FINAL_REVIEW.md)
 
-The hosted application requires a provisioned community account. It does not expose
-the owner's management credentials. Use the reproducible local setup below to inspect
-the code and product; reviewer access is provisioned separately before sharing the demo.
+The public preview is an interactive, browser-only sample using synthetic records.
+It needs no sign-in and makes no live model calls or deliveries. The separate judge
+workspace runs the actual API, worker and configured models against its own database
+schema, with both email and Telegram delivery simulated. The review code is supplied
+only in Devpost's private testing instructions. Reviewers can switch between manager
+and resident views; changes persist in the shared review community.
+The two starting cases contain labeled prepared model outputs; new messages and
+subsequent model-dependent work use the deployed models.
+See [review setup and boundaries](docs/JURY_DEMO.md). Existing community accounts use
+[Member sign-in](https://d35nbywkoth58f.cloudfront.net/?mode=member).
 
 ## Run the product
 
@@ -36,7 +44,7 @@ $env:STEWARD_API_TOKENS = '{"local-review-only":{"actor_id":"Simon O.","role":"m
 .venv/Scripts/steward-server.exe
 ```
 
-Open `http://127.0.0.1:8000` and sign in with `local-review-only`. This is an
+Open `http://127.0.0.1:8000/?mode=member` and sign in with `local-review-only`. This is an
 explicit local test identity, unsuitable for deployment. The console uses actual
 Bedrock inference; configure an authorized AWS profile and region first.
 Use **Simulation studio** to submit resident messages, vendor replies and clock

@@ -65,7 +65,7 @@ criteria, including Presentation. Steward fits the Good Neighbor Agents track.
 | Creativity | Recurrence/warranty checks, history-sensitive vendor decisions and community decisions tracked through implementation | Seed history and controlled comparisons are synthetic |
 | Presentation | A working product and reproducible scenarios ready to record | Video itself has not been prepared or judged |
 
-## Handoff to submission preparation
+## Historical handoff to submission preparation (10 September)
 
 1. Publish the reviewed source package to a public repository with MIT license,
    README, setup instructions and [architecture diagram](ARCHITECTURE.md).
@@ -78,8 +78,8 @@ criteria, including Presentation. Steward fits the Good Neighbor Agents track.
 
 The controlled real vendor-mail portion was completed on 2026-09-11; see
 [CONTROLLED_MAIL_TEST](CONTROLLED_MAIL_TEST.md). It used two owned identities and
-isolated local application state, with no actual supplier or repair. The public
-demo still uses dry-run supplier mail. Telegram output is independently enabled and
+isolated local application state, with no actual supplier or repair. The owner/member
+community still uses dry-run supplier mail. Its Telegram output is independently enabled and
 verified on 2026-09-13 with a real group delivery receipt; see
 [TELEGRAM_DELIVERY_REVIEW](TELEGRAM_DELIVERY_REVIEW.md). This follow-up passed 476
 Python tests (16 PostgreSQL-specific skips), 30 frontend tests and the live panel
@@ -87,3 +87,8 @@ check. Remaining production follow-ups include
 the complete hosted Telegram-to-repair journey, RDS restore/rollback rehearsal,
 independent user research and comparative impact study in
 [REMAINING_WORK](REMAINING_WORK.md).
+
+The public preview and separate jury workspace added on September 14 have different
+delivery boundaries; see [JURY_DEMO](JURY_DEMO.md). The public preview is browser-only,
+and both external channels are simulated in the jury workspace. The historical
+submission/video handoff above does not describe current Devpost completion.

@@ -41,6 +41,8 @@ class StewardSettings(BaseSettings):
     database_path: Path = Path("steward.db")
     database_url: SecretStr | None = None
     database_secret: SecretStr | None = None
+    database_schema: str | None = None
+    review_isolated: bool = False
     simulation_clock_start: str | None = None
     seed_dir: Path | None = None
     execution_mode: RuntimeExecutionMode = RuntimeExecutionMode.DRY_RUN
@@ -93,6 +95,20 @@ class StewardSettings(BaseSettings):
     def _parse_auto_rfq_categories(cls, value):
         if isinstance(value, str):
             return frozenset(part.strip() for part in value.split(",") if part.strip())
+        return value
+
+    @field_validator("database_schema")
+    @classmethod
+    def _database_schema(cls, value: str | None) -> str | None:
+        if value is not None:
+            import re
+
+            if (
+                not re.fullmatch(r"[a-z][a-z0-9_]{0,62}", value)
+                or value in ("public", "pg_catalog", "information_schema")
+                or value.startswith("pg_")
+            ):
+                raise ValueError("database schema must be a non-system SQL identifier")
         return value
 
     @field_validator("vendor_domains", mode="before")
@@ -152,6 +168,18 @@ class StewardSettings(BaseSettings):
 
     @model_validator(mode="after")
     def _live_requirements(self) -> StewardSettings:
+        if self.review_isolated and (
+            self.database_schema != "steward_review"
+            or self.execution_mode is not RuntimeExecutionMode.DRY_RUN
+            or self.telegram_delivery_mode is not TelegramDeliveryMode.DRY_RUN
+            or self.telegram_enabled
+            or self.telegram_bot_token
+            or self.channel_configuration
+            or self.ses_inbound_enabled
+            or self.ses_queue_url
+            or self.allow_live_commitments
+        ):
+            raise ValueError("review runtime requires isolated storage and simulated channels")
         if (
             not self.channel_configuration
             and self.telegram_delivery_mode is TelegramDeliveryMode.LIVE

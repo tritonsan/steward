@@ -1,0 +1,181 @@
+.review-login {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 15% 15%, #e2ead9, transparent 50%), #f6f8f5;
+  padding: 28px 24px 64px;
+}
+.review-back {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--navy);
+  text-decoration: none;
+}
+.review-login-card {
+  max-width: 520px;
+  margin: 30px auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 32px 40px;
+  box-shadow: 0 16px 60px #052e4308;
+}
+.review-login-card > .steward-logo {
+  display: block;
+  margin-bottom: 20px;
+}
+.review-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--green);
+}
+.review-login-card h1 {
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+.review-login-card form {
+  display: grid;
+  gap: 10px;
+  margin: 26px 0 22px;
+}
+.review-login-card label {
+  font-weight: 600;
+}
+.review-login-card input {
+  min-height: 46px;
+  width: 100%;
+  border: 1px solid #9dafaa;
+  border-radius: 8px;
+  padding: 12px;
+}
+.review-login-card form button {
+  margin-top: 10px;
+}
+.review-explainer {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #eef4ea;
+  padding: 14px;
+  border-radius: 10px;
+}
+.review-explainer svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--green);
+}
+.review-explainer p {
+  margin: 0;
+  font-size: 13px;
+}
+.review-small {
+  font-size: 12px;
+}
+.review-banner {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 24px;
+  background: #e6efde;
+  border-bottom: 1px solid #becdb8;
+  color: var(--navy);
+  min-height: 64px;
+  flex-wrap: wrap;
+}
+.review-banner > div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.review-banner span {
+  font-size: 12px;
+}
+.review-banner label,
+.review-banner a {
+  font-size: 12px;
+  color: var(--navy);
+}
+.review-banner label {
+  display: inline;
+  margin: 0;
+}
+.review-banner select {
+  width: auto;
+  margin: 0;
+  border: 1px solid #9aaa93;
+  border-radius: 6px;
+  padding: 6px;
+  background: white;
+  color: var(--navy);
+}
+.review-shell .sidebar {
+  position: sticky;
+  inset: auto;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  flex-shrink: 0;
+}
+.review-shell .workspace {
+  margin-left: 0;
+  flex: 1;
+  min-width: 0;
+}
+.review-shell .app {
+  min-height: calc(100vh - 104px);
+}
+.review-guide {
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+  font-size: 13px;
+}
+.review-guide summary {
+  cursor: pointer;
+  color: var(--navy);
+  font-weight: 600;
+}
+.review-guide li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+.review-error {
+  margin: 0;
+  padding: 12px 24px;
+  background: #fff0eb;
+  color: #943b24;
+}
+.review-shell .resident-app {
+  min-height: calc(100vh - 104px);
+}
+@media (max-width: 760px) {
+  .review-login-card {
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .review-login-card h1 {
+    font-size: 25px;
+  }
+  .review-banner {
+    padding: 12px 16px;
+  }
+  .review-banner span {
+    width: 100%;
+  }
+  .review-shell .sidebar {
+    position: fixed;
+    z-index: 30;
+    inset: 0 auto 0 0;
+  }
+  .review-shell .workspace {
+    margin-left: 0;
+  }
+  .review-guide {
+    padding: 12px 16px;
+  }
+}

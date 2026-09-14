@@ -137,9 +137,11 @@ function InvitationCard({
 export function ResidentDesk({
   api,
   onSignOut,
+  channelsEnabled = true,
 }: {
   api: Api;
   onSignOut: () => void;
+  channelsEnabled?: boolean;
 }) {
   const [data, setData] = useState<{
     cases: ResidentCase[];
@@ -268,7 +270,7 @@ export function ResidentDesk({
             )}
           </section>
         )}
-        <TelegramLink api={api} />
+        {channelsEnabled && <TelegramLink api={api} />}
         <p className="resident-footnote">
           Management is following the work. You can keep up here without
           managing the details.

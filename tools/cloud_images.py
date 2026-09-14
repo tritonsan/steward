@@ -21,11 +21,15 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("action", choices=["build", "status"])
+    parser.add_argument("--target", choices=["all", "api"], default="all")
     args = parser.parse_args()
     session = boto3.Session(region_name="us-east-1")
     config = Config(connect_timeout=10, read_timeout=30, retries={"max_attempts": 2})
     cb = session.client("codebuild", config=config)
     state_path = ROOT / ".scratch/cloud-build.local.json"
+    previous = json.loads(state_path.read_text()) if state_path.exists() else {}
+    if args.action == "build" and args.target == "api" and not previous.get("inferenceImageUri"):
+        parser.error("An API-only build requires a recorded existing inference image")
     if args.action == "status":
         state = json.loads(state_path.read_text())
         builds = cb.batch_get_builds(ids=state["build_ids"])["builds"]
@@ -219,6 +223,8 @@ def main():
             "aws/codebuild/amazonlinux-aarch64-standard:3.0",
         ),
     ]:
+        if args.target == "api" and name != "api":
+            continue
         project = "steward-build-" + name
         values = dict(
             name=project,
@@ -259,9 +265,12 @@ def main():
         "release": release,
         "build_ids": ids,
         "applicationImageUri": f"{registry}/steward-api:{release}",
-        "inferenceImageUri": f"{registry}/steward-inference:{release}",
+        "inferenceImageUri": (
+            previous["inferenceImageUri"]
+            if args.target == "api"
+            else f"{registry}/steward-inference:{release}"
+        ),
     }
-    previous = json.loads(state_path.read_text()) if state_path.exists() else {}
     state["demoClock"] = previous.get("demoClock", datetime.now(timezone.utc).isoformat())
     state_path.write_text(json.dumps(state, indent=2))
     print(json.dumps({"release": release, "build_ids": ids}))

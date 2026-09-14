@@ -804,6 +804,13 @@ def build_runtime(
 ) -> StewardRuntime:
     """Build the runtime without performing network or outbound side effects."""
     configured = settings or StewardSettings()
+    if configured.review_isolated:
+        # Revalidate model_copy callers too; no review may inherit a live transport.
+        configured = StewardSettings.model_validate(configured.model_dump())
+        if inbound_reader is not None or (
+            transport is not None and not isinstance(transport, RecordingMailTransport)
+        ):
+            raise ValueError("review runtime only supports a recording mail transport")
     if configured.channel_configuration:
         channels = json.loads(configured.channel_configuration.get_secret_value())
         allowed = {
@@ -845,7 +852,9 @@ def build_runtime(
     if configured.database_url:
         from steward.store.postgres import PostgresOperationalStore
 
-        store = PostgresOperationalStore(configured.database_url.get_secret_value())
+        store = PostgresOperationalStore(
+            configured.database_url.get_secret_value(), schema=configured.database_schema
+        )
         if configured.semantic_memory_enabled:
             from steward.memory.semantic import SemanticIndex
 

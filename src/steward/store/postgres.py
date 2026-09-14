@@ -49,11 +49,26 @@ class _Connection:
 
 class PostgresOperationalStore(SqliteOperationalStore):
     def __init__(
-        self, dsn, *, recurrence_window_days=90, same_fault_threshold=0.35, max_case_hits=10
+        self,
+        dsn,
+        *,
+        schema=None,
+        recurrence_window_days=90,
+        same_fault_threshold=0.35,
+        max_case_hits=10,
     ):
         import psycopg
         from psycopg.rows import dict_row
 
+        if schema is not None:
+            import re
+
+            if (
+                not re.fullmatch(r"[a-z][a-z0-9_]{0,62}", schema)
+                or schema in ("public", "pg_catalog", "information_schema")
+                or schema.startswith("pg_")
+            ):
+                raise ValueError("unsafe operational schema")
         self._path = "postgresql"
         self._recurrence_window_days = recurrence_window_days
         self._same_fault_threshold = same_fault_threshold
@@ -64,6 +79,19 @@ class PostgresOperationalStore(SqliteOperationalStore):
         )
         self.semantic_index = None
         try:
+            if schema is not None:
+                from psycopg import sql
+
+                # API and worker may start together; serialize first schema creation too.
+                with self._conn.raw.transaction():
+                    self._conn.raw.execute("SELECT pg_advisory_xact_lock(1937007986)")
+                    self._conn.raw.execute(
+                        sql.SQL("CREATE SCHEMA IF NOT EXISTS {}").format(sql.Identifier(schema))
+                    )
+                    # Never fall back to owner tables in public when a review table is absent.
+                    self._conn.raw.execute(
+                        sql.SQL("SET search_path TO {}, pg_catalog").format(sql.Identifier(schema))
+                    )
             with self._transaction() as conn:
                 for sql in _SCHEMA.split(";"):
                     if sql.strip():
