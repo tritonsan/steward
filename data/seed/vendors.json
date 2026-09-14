@@ -1,0 +1,126 @@
+{
+  "$comment": "Synthetic companies. Every address is a mailbox on the project's own vendors subdomain, controlled by the project and reachable for the demo. `simulated: true` is surfaced as a badge in the console so nobody is misled about who is on the other end of a real email.",
+  "vendors": [
+    {
+      "vendor_id": "meridian-lift",
+      "name": "Meridian Lift Services",
+      "email": "meridian@vendors.narrativenode-labs.cloud",
+      "categories": ["elevator"],
+      "phone": null,
+      "allowlisted": true,
+      "simulated": true,
+      "character": "The incumbent, and the reason the archive has an argument in it. Answers fast, prices in the middle of the market, and fixes things once. Six unplanned jobs on this property and not one of them came back.",
+      "notes": "Serviced A and B Block since 2015. Holds the annual inspection contract for all four elevators. Quotes are itemised and they will say plainly when a part is refurbished rather than new, which is why management trusts them on the older A Block controller."
+    },
+    {
+      "vendor_id": "coastline-elevator",
+      "name": "Coastline Elevator Co.",
+      "email": "coastline@vendors.narrativenode-labs.cloud",
+      "categories": ["elevator"],
+      "phone": null,
+      "allowlisted": true,
+      "simulated": true,
+      "character": "Always the cheapest quote, which is exactly the trap. Slow to answer, slower to arrive, and two of its three unplanned repairs here failed again on the same asset inside ninety days. Its average invoice is the lowest of the three and its average cost to the community is not.",
+      "notes": "Brought in during 2025 when the committee was trying to reduce maintenance spend. The pattern in the archive is consistent: they treat the symptom, the symptom returns. The November 2025 vibration job on A Block and the September 2025 levelling job on B Block both came back, and the B Block one had to be fixed properly by someone else in December."
+    },
+    {
+      "vendor_id": "pinnacle-vertical",
+      "name": "Pinnacle Vertical Systems",
+      "email": "pinnacle@vendors.narrativenode-labs.cloud",
+      "categories": ["elevator"],
+      "phone": null,
+      "allowlisted": true,
+      "simulated": true,
+      "character": "One job, done well, at a premium. A single data point is not a track record, and Steward is expected to say that rather than treat one clean job as proof of anything.",
+      "notes": "Fitted the C Block machine room ventilation fan in May 2025 after the summer overheating problem. Work was good and the invoice was the highest of the three companies. Has been slow to respond to requests since; in the live demo they do not reply at all, which is what puts the follow-up loop on screen."
+    },
+    {
+      "vendor_id": "bluewater-pool",
+      "name": "Bluewater Pool Care",
+      "email": "bluewater@vendors.narrativenode-labs.cloud",
+      "categories": ["pool"],
+      "phone": null,
+      "allowlisted": true,
+      "simulated": true,
+      "character": "Dull and dependable, which is the point. Four jobs, no recurrences, predictable prices.",
+      "notes": "Opens and closes the pool each season and handles anything that goes wrong in between. The kind of vendor a low spend cap and full autonomy were designed for."
+    },
+    {
+      "vendor_id": "greenline-grounds",
+      "name": "Greenline Grounds",
+      "email": "greenline@vendors.narrativenode-labs.cloud",
+      "categories": ["landscaping"],
+      "phone": null,
+      "allowlisted": true,
+      "simulated": true,
+      "character": "Competent and a little slow in spring when everyone wants planting done at once.",
+      "notes": "Handles seasonal planting, hedges, and tree work. Was unavailable in March 2026, which is how Thornfield got the irrigation job."
+    },
+    {
+      "vendor_id": "thornfield-landscaping",
+      "name": "Thornfield Landscaping",
+      "email": "thornfield@vendors.narrativenode-labs.cloud",
+      "categories": ["landscaping"],
+      "phone": null,
+      "allowlisted": false,
+      "simulated": true,
+      "character": "One job, one billing dispute, and consequently no longer allowlisted. Present in the data so the vendor allowlist rule has something real to refuse.",
+      "notes": "Repaired the courtyard irrigation manifold in March 2026 and invoiced 920 against a verbal estimate of 640, arguing the extra was unavoidable once the trench was open. The committee paid it and removed them from the approved list. A quote from Thornfield now cannot be accepted autonomously no matter how good it looks."
+    },
+    {
+      "vendor_id": "brightpath-cleaning",
+      "name": "BrightPath Cleaning",
+      "email": "brightpath@vendors.narrativenode-labs.cloud",
+      "categories": ["common_area_cleaning"],
+      "phone": null,
+      "allowlisted": true,
+      "simulated": true,
+      "character": "Does the deep cleans the standing arrangement does not cover.",
+      "notes": "Two commissioned jobs in the archive: the stairwell deep clean in January 2025 and the garage floor degreasing in February 2026."
+    },
+    {
+      "vendor_id": "sentinel-access",
+      "name": "Sentinel Access Systems",
+      "email": "sentinel@vendors.narrativenode-labs.cloud",
+      "categories": ["access_control"],
+      "phone": null,
+      "allowlisted": true,
+      "simulated": true,
+      "character": "Installed the gate system, so nobody else really knows it.",
+      "notes": "Fast on the barrier arm because a stuck barrier blocks the only vehicle entrance. Sole practical supplier for this asset, which is worth remembering when reading their prices."
+    },
+    {
+      "vendor_id": "halcyon-plumbing",
+      "name": "Halcyon Plumbing",
+      "email": "halcyon@vendors.narrativenode-labs.cloud",
+      "categories": ["plumbing"],
+      "phone": null,
+      "allowlisted": true,
+      "simulated": true,
+      "character": "Expensive per visit, but the booster pump job in December 2025 held and the upper floors stopped complaining.",
+      "notes": "Two jobs, no recurrences."
+    },
+    {
+      "vendor_id": "northstar-electrical",
+      "name": "NorthStar Electrical",
+      "email": "northstar@vendors.narrativenode-labs.cloud",
+      "categories": ["electrical", "lighting"],
+      "phone": null,
+      "allowlisted": true,
+      "simulated": true,
+      "character": "Handles the garage circuits and the emergency lighting.",
+      "notes": "The September 2025 circuit fault was diagnosed as water ingress at a fitting rather than an overload, which is why it has not returned."
+    },
+    {
+      "vendor_id": "guardian-fire",
+      "name": "Guardian Fire Safety",
+      "email": "guardian@vendors.narrativenode-labs.cloud",
+      "categories": ["fire_safety"],
+      "phone": null,
+      "allowlisted": true,
+      "simulated": true,
+      "character": "Does the annual statutory inspection and nothing else.",
+      "notes": "Fire safety is set to prepare-only regardless of how routine the inspection looks. A compliance obligation is not something an agent signs off on its own."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# Preserve release bytes so SOURCE_MANIFEST.json hashes remain reproducible.
+* -text
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary

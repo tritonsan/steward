@@ -1,0 +1,2717 @@
+{
+  "live_model_calls": true,
+  "simulated_inputs": true,
+  "model": "amazon.nova-pro-v1:0",
+  "prompt_sha256": "f5149d9c8a6f3b1aee36df74b8b31f187dc05585ab449bb2a240217f9138d690",
+  "portfolio_count": 30,
+  "quote_count": 90,
+  "passing_portfolios": 30,
+  "passing_quotes": 90,
+  "passed": true,
+  "limitations": [
+    "Tests extraction, not decision quality or real supplier performance.",
+    "Synthetic bodies share templates; no unreadable attachments included."
+  ],
+  "results": [
+    {
+      "id": "portfolio-01-vendor-1",
+      "portfolio": 1,
+      "body": "Quotation from contractor 1: total SGD 250.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "250.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "250.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 250.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-01-vendor-2",
+      "portfolio": 1,
+      "body": "Quotation from contractor 2: total SGD 387.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "387.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "387.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 387.50.",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-01-vendor-3",
+      "portfolio": 1,
+      "body": "Quotation from contractor 3: total SGD 524.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "524.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "524.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 524.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-02-vendor-1",
+      "portfolio": 2,
+      "body": "Quotation from contractor 1: total USD 323.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "323.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "323.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 323.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-02-vendor-2",
+      "portfolio": 2,
+      "body": "Quotation from contractor 2: total USD 460.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "460.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "460.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 460.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-02-vendor-3",
+      "portfolio": 2,
+      "body": "Quotation from contractor 3: total USD 597.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "597.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "597.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 597.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-03-vendor-1",
+      "portfolio": 3,
+      "body": "Quotation from contractor 1: total EUR 396.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "396.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "396.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 396.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-03-vendor-2",
+      "portfolio": 3,
+      "body": "Quotation from contractor 2: total EUR 533.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "533.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "533.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 533.50.",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-03-vendor-3",
+      "portfolio": 3,
+      "body": "Quotation from contractor 3: total EUR 670.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "670.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "670.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 670.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-04-vendor-1",
+      "portfolio": 4,
+      "body": "Quotation from contractor 1: total SGD 469.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "469.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "469.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 469.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-04-vendor-2",
+      "portfolio": 4,
+      "body": "Quotation from contractor 2: total SGD 606.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "606.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "606.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 606.50.",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-04-vendor-3",
+      "portfolio": 4,
+      "body": "Quotation from contractor 3: total SGD 743.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "743.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "743.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 743.50.",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-05-vendor-1",
+      "portfolio": 5,
+      "body": "Quotation from contractor 1: total USD 542.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "542.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "542.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 542.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-05-vendor-2",
+      "portfolio": 5,
+      "body": "Quotation from contractor 2: total USD 679.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "679.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "679.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 679.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-05-vendor-3",
+      "portfolio": 5,
+      "body": "Quotation from contractor 3: total USD 816.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "816.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "816.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 816.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-06-vendor-1",
+      "portfolio": 6,
+      "body": "Quotation from contractor 1: total EUR 615.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "615.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "615.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 615.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-06-vendor-2",
+      "portfolio": 6,
+      "body": "Quotation from contractor 2: total EUR 752.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "752.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "752.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 752.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-06-vendor-3",
+      "portfolio": 6,
+      "body": "Quotation from contractor 3: total EUR 889.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "889.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "889.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 889.50.",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-07-vendor-1",
+      "portfolio": 7,
+      "body": "Quotation from contractor 1: total SGD 688.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "688.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "688.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 688.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-07-vendor-2",
+      "portfolio": 7,
+      "body": "Quotation from contractor 2: total SGD 825.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "825.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "825.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 825.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-07-vendor-3",
+      "portfolio": 7,
+      "body": "Quotation from contractor 3: total SGD 962.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "962.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "962.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 962.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-08-vendor-1",
+      "portfolio": 8,
+      "body": "Quotation from contractor 1: total USD 761.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "761.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "761.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 761.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-08-vendor-2",
+      "portfolio": 8,
+      "body": "Quotation from contractor 2: total USD 898.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "898.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "898.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 898.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-08-vendor-3",
+      "portfolio": 8,
+      "body": "Quotation from contractor 3: total USD 1,035.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1035.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1035.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1,035.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-09-vendor-1",
+      "portfolio": 9,
+      "body": "Quotation from contractor 1: total EUR 834.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "834.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "834.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 834.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-09-vendor-2",
+      "portfolio": 9,
+      "body": "Quotation from contractor 2: total EUR 971.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "971.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "971.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 971.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-09-vendor-3",
+      "portfolio": 9,
+      "body": "Quotation from contractor 3: total EUR 1108.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1108.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1108.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1108.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-10-vendor-1",
+      "portfolio": 10,
+      "body": "Quotation from contractor 1: total SGD 907.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "907.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "907.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 907.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-10-vendor-2",
+      "portfolio": 10,
+      "body": "Quotation from contractor 2: total SGD 1,044.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1044.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1044.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1,044.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-10-vendor-3",
+      "portfolio": 10,
+      "body": "Quotation from contractor 3: total SGD 1,181.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1181.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1181.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1,181.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-11-vendor-1",
+      "portfolio": 11,
+      "body": "Quotation from contractor 1: total USD 980.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "980.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "980.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 980.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-11-vendor-2",
+      "portfolio": 11,
+      "body": "Quotation from contractor 2: total USD 1117.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1117.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1117.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1117.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-11-vendor-3",
+      "portfolio": 11,
+      "body": "Quotation from contractor 3: total USD 1254.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1254.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1254.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1254.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-12-vendor-1",
+      "portfolio": 12,
+      "body": "Quotation from contractor 1: total EUR 1,053.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1053.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1053.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1,053.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-12-vendor-2",
+      "portfolio": 12,
+      "body": "Quotation from contractor 2: total EUR 1,190.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1190.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1190.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1,190.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-12-vendor-3",
+      "portfolio": 12,
+      "body": "Quotation from contractor 3: total EUR 1,327.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1327.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1327.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1,327.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-13-vendor-1",
+      "portfolio": 13,
+      "body": "Quotation from contractor 1: total SGD 1126.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1126.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1126.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1126.50.",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-13-vendor-2",
+      "portfolio": 13,
+      "body": "Quotation from contractor 2: total SGD 1263.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1263.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1263.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1263.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-13-vendor-3",
+      "portfolio": 13,
+      "body": "Quotation from contractor 3: total SGD 1400.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1400.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1400.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1400.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-14-vendor-1",
+      "portfolio": 14,
+      "body": "Quotation from contractor 1: total USD 1,199.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1199.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1199.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1,199.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-14-vendor-2",
+      "portfolio": 14,
+      "body": "Quotation from contractor 2: total USD 1,336.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1336.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1336.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1,336.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-14-vendor-3",
+      "portfolio": 14,
+      "body": "Quotation from contractor 3: total USD 1,473.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1473.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1473.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1,473.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-15-vendor-1",
+      "portfolio": 15,
+      "body": "Quotation from contractor 1: total EUR 1272.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1272.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1272.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1272.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-15-vendor-2",
+      "portfolio": 15,
+      "body": "Quotation from contractor 2: total EUR 1409.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1409.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1409.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1409.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-15-vendor-3",
+      "portfolio": 15,
+      "body": "Quotation from contractor 3: total EUR 1546.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1546.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1546.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1546.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-16-vendor-1",
+      "portfolio": 16,
+      "body": "Quotation from contractor 1: total SGD 1,345.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1345.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1345.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1,345.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-16-vendor-2",
+      "portfolio": 16,
+      "body": "Quotation from contractor 2: total SGD 1,482.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1482.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1482.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "SGD 1,482.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-16-vendor-3",
+      "portfolio": 16,
+      "body": "Quotation from contractor 3: total SGD 1,619.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1619.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1619.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1,619.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-17-vendor-1",
+      "portfolio": 17,
+      "body": "Quotation from contractor 1: total USD 1418.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1418.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1418.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1418.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-17-vendor-2",
+      "portfolio": 17,
+      "body": "Quotation from contractor 2: total USD 1555.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1555.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1555.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1555.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-17-vendor-3",
+      "portfolio": 17,
+      "body": "Quotation from contractor 3: total USD 1692.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1692.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1692.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1692.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-18-vendor-1",
+      "portfolio": 18,
+      "body": "Quotation from contractor 1: total EUR 1,491.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1491.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1491.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1,491.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-18-vendor-2",
+      "portfolio": 18,
+      "body": "Quotation from contractor 2: total EUR 1,628.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1628.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1628.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1,628.50.",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-18-vendor-3",
+      "portfolio": 18,
+      "body": "Quotation from contractor 3: total EUR 1,765.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1765.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1765.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1,765.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-19-vendor-1",
+      "portfolio": 19,
+      "body": "Quotation from contractor 1: total SGD 1564.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1564.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1564.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1564.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-19-vendor-2",
+      "portfolio": 19,
+      "body": "Quotation from contractor 2: total SGD 1701.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1701.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1701.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1701.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-19-vendor-3",
+      "portfolio": 19,
+      "body": "Quotation from contractor 3: total SGD 1838.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1838.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1838.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1838.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-20-vendor-1",
+      "portfolio": 20,
+      "body": "Quotation from contractor 1: total USD 1,637.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1637.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1637.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1,637.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-20-vendor-2",
+      "portfolio": 20,
+      "body": "Quotation from contractor 2: total USD 1,774.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1774.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1774.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1,774.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-20-vendor-3",
+      "portfolio": 20,
+      "body": "Quotation from contractor 3: total USD 1,911.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1911.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1911.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1,911.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-21-vendor-1",
+      "portfolio": 21,
+      "body": "Quotation from contractor 1: total EUR 1710.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1710.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1710.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1710.50.",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-21-vendor-2",
+      "portfolio": 21,
+      "body": "Quotation from contractor 2: total EUR 1847.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1847.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1847.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1847.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-21-vendor-3",
+      "portfolio": 21,
+      "body": "Quotation from contractor 3: total EUR 1984.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1984.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1984.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1984.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-22-vendor-1",
+      "portfolio": 22,
+      "body": "Quotation from contractor 1: total SGD 1,783.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1783.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1783.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1,783.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-22-vendor-2",
+      "portfolio": 22,
+      "body": "Quotation from contractor 2: total SGD 1,920.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1920.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1920.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 1,920.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-22-vendor-3",
+      "portfolio": 22,
+      "body": "Quotation from contractor 3: total SGD 2,057.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2057.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2057.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 2,057.50",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-23-vendor-1",
+      "portfolio": 23,
+      "body": "Quotation from contractor 1: total USD 1856.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1856.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1856.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1856.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-23-vendor-2",
+      "portfolio": 23,
+      "body": "Quotation from contractor 2: total USD 1993.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1993.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1993.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 1993.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-23-vendor-3",
+      "portfolio": 23,
+      "body": "Quotation from contractor 3: total USD 2130.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2130.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2130.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 2130.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-24-vendor-1",
+      "portfolio": 24,
+      "body": "Quotation from contractor 1: total EUR 1,929.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "1929.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "1929.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 1,929.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-24-vendor-2",
+      "portfolio": 24,
+      "body": "Quotation from contractor 2: total EUR 2,066.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2066.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2066.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 2,066.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-24-vendor-3",
+      "portfolio": 24,
+      "body": "Quotation from contractor 3: total EUR 2,203.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2203.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2203.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 2,203.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-25-vendor-1",
+      "portfolio": 25,
+      "body": "Quotation from contractor 1: total SGD 2002.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2002.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2002.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 2002.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-25-vendor-2",
+      "portfolio": 25,
+      "body": "Quotation from contractor 2: total SGD 2139.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2139.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2139.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 2139.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-25-vendor-3",
+      "portfolio": 25,
+      "body": "Quotation from contractor 3: total SGD 2276.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2276.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2276.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 2276.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-26-vendor-1",
+      "portfolio": 26,
+      "body": "Quotation from contractor 1: total USD 2,075.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2075.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2075.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 2,075.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-26-vendor-2",
+      "portfolio": 26,
+      "body": "Quotation from contractor 2: total USD 2,212.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2212.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2212.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 2,212.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-26-vendor-3",
+      "portfolio": 26,
+      "body": "Quotation from contractor 3: total USD 2,349.50. Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2349.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2349.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 2,349.50",
+        "scope_evidence": "Replace lift guide shoes and test all stops. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-27-vendor-1",
+      "portfolio": 27,
+      "body": "Quotation from contractor 1: total EUR 2148.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2148.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2148.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 2148.50.",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-27-vendor-2",
+      "portfolio": 27,
+      "body": "Quotation from contractor 2: total EUR 2285.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2285.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2285.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 2285.50.",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-27-vendor-3",
+      "portfolio": 27,
+      "body": "Quotation from contractor 3: total EUR 2422.50. Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2422.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2422.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 2422.50.",
+        "scope_evidence": "Inspect the pump seals and replace the damaged gasket. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-28-vendor-1",
+      "portfolio": 28,
+      "body": "Quotation from contractor 1: total SGD 2,221.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2221.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2221.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 2,221.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-28-vendor-2",
+      "portfolio": 28,
+      "body": "Quotation from contractor 2: total SGD 2,358.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2358.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2358.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 2,358.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-28-vendor-3",
+      "portfolio": 28,
+      "body": "Quotation from contractor 3: total SGD 2,495.50. Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2495.50",
+      "currency": "SGD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2495.50",
+        "currency": "SGD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total SGD 2,495.50",
+        "scope_evidence": "Replace the faulty controller and perform a safety test. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-29-vendor-1",
+      "portfolio": 29,
+      "body": "Quotation from contractor 1: total USD 2294.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2294.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2294.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 2294.50.",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-29-vendor-2",
+      "portfolio": 29,
+      "body": "Quotation from contractor 2: total USD 2431.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2431.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2431.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 2431.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-29-vendor-3",
+      "portfolio": 29,
+      "body": "Quotation from contractor 3: total USD 2568.50. Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2568.50",
+      "currency": "USD",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2568.50",
+        "currency": "USD",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total USD 2568.50",
+        "scope_evidence": "Clear the drain and confirm water flows freely. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-30-vendor-1",
+      "portfolio": 30,
+      "body": "Quotation from contractor 1: total EUR 2,367.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2367.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2367.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 2,367.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-30-vendor-2",
+      "portfolio": 30,
+      "body": "Quotation from contractor 2: total EUR 2,504.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2504.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2504.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 2,504.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    },
+    {
+      "id": "portfolio-30-vendor-3",
+      "portfolio": 30,
+      "body": "Quotation from contractor 3: total EUR 2,641.50. Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded. We can attend on 2026-09-11 at 09:00 UTC. This quotation is valid until 2026-09-20 at 17:00 UTC.",
+      "amount": "2641.50",
+      "currency": "EUR",
+      "checks": {
+        "has_quote": true,
+        "amount": true,
+        "currency": true,
+        "amount_source": true,
+        "scope_source": true,
+        "onsite": true,
+        "validity": true
+      },
+      "passed": true,
+      "actual": {
+        "has_quote": true,
+        "amount": "2641.50",
+        "currency": "EUR",
+        "currency_inferred_from_rfq": false,
+        "amount_evidence": "total EUR 2,641.50",
+        "scope_evidence": "Replace the damaged light fittings and test the circuit. Parts and labour are included. Additional work is excluded.",
+        "earliest_onsite_at": "2026-09-11T09:00:00Z",
+        "onsite_evidence": "We can attend on 2026-09-11 at 09:00 UTC.",
+        "valid_until": "2026-09-20T17:00:00Z",
+        "validity_evidence": "This quotation is valid until 2026-09-20 at 17:00 UTC.",
+        "no_quote_reason": ""
+      }
+    }
+  ]
+}

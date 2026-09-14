@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-09-10T13:25:41.520513+00:00",
+  "source": "https://api.osv.dev/v1/querybatch",
+  "scope": "requirements.lock exact pinned versions",
+  "packages_checked": 75,
+  "affected_packages": [],
+  "pip_check": "No broken requirements found.",
+  "npm_audit": {
+    "checked_dependencies": 147,
+    "vulnerabilities": 0
+  },
+  "limitations": "Advisory database scan only. This does not prove absence of unknown vulnerabilities."
+}

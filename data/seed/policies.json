@@ -1,0 +1,151 @@
+{
+  "$comment": "The initial state of the Approvals screen. This is the only place Steward's authority is granted, and it is data a human edited, never text an agent read. Note what is missing: there is no entry for `hvac`, deliberately, so a problem raised against the A Block lobby unit escalates and demonstrates that an unconfigured category fails closed.",
+  "global_settings": {
+    "kill_switch": false,
+    "min_triage_confidence": 0.7,
+    "follow_up_grace_hours": 24,
+    "max_follow_ups_before_escalation": 2,
+    "recurrence_window_days": 90,
+    "default_currency": "USD"
+  },
+  "policies": [
+    {
+      "category": "elevator",
+      "mode": "always_approve",
+      "per_incident_cap": "1500.00",
+      "monthly_cap": "4000.00",
+      "currency": "USD",
+      "allowed_vendor_ids": ["meridian-lift", "coastline-elevator", "pinnacle-vertical"],
+      "updated_at": "2026-01-14T19:30:00Z",
+      "updated_by": "Simon O.",
+      "rationale": "Set the evening after the January recall meeting. The cap is high because of the June 2025 incident where a resident was trapped and the committee decided it never wanted cost approval standing between a trapped person and a call-out. All three companies stay on the list; the committee's conclusion was that the problem had been how they chose, not who was available."
+    },
+    {
+      "category": "pool",
+      "mode": "always_approve",
+      "per_incident_cap": "800.00",
+      "monthly_cap": "1500.00",
+      "currency": "USD",
+      "allowed_vendor_ids": ["bluewater-pool"],
+      "updated_at": "2026-05-02T10:00:00Z",
+      "updated_by": "Ingrid B.",
+      "rationale": "Predictable seasonal work with one dependable supplier and a low ceiling. The clearest case for full autonomy in the whole configuration."
+    },
+    {
+      "category": "common_area_cleaning",
+      "mode": "always_approve",
+      "per_incident_cap": "700.00",
+      "monthly_cap": "1200.00",
+      "currency": "USD",
+      "allowed_vendor_ids": ["brightpath-cleaning"],
+      "updated_at": "2026-02-16T09:30:00Z",
+      "updated_by": "Ingrid B.",
+      "rationale": "Low risk and easy to judge after the fact."
+    },
+    {
+      "category": "access_control",
+      "mode": "always_approve",
+      "per_incident_cap": "700.00",
+      "monthly_cap": "1500.00",
+      "currency": "USD",
+      "allowed_vendor_ids": ["sentinel-access"],
+      "updated_at": "2026-04-08T11:00:00Z",
+      "updated_by": "Marcus R.",
+      "rationale": "A stuck barrier leaves the only vehicle entrance open, so waiting for a human is the greater risk. One supplier, moderate ceiling."
+    },
+    {
+      "category": "plumbing",
+      "mode": "always_approve",
+      "per_incident_cap": "1200.00",
+      "monthly_cap": "2500.00",
+      "currency": "USD",
+      "allowed_vendor_ids": ["halcyon-plumbing"],
+      "updated_at": "2026-07-03T09:30:00Z",
+      "updated_by": "Simon O.",
+      "rationale": "Water problems get worse by the hour. Raised to 1200 after the December 2025 booster pump job came in at 1180 and the committee found itself approving something it would have approved anyway."
+    },
+    {
+      "category": "lighting",
+      "mode": "always_approve",
+      "per_incident_cap": "500.00",
+      "monthly_cap": "900.00",
+      "currency": "USD",
+      "allowed_vendor_ids": ["northstar-electrical"],
+      "updated_at": "2026-01-30T10:00:00Z",
+      "updated_by": "Marcus R.",
+      "rationale": "Lamp and fitting replacements are routine. Anything larger exceeds the cap and comes back to a human, which is the intended behaviour rather than a limitation."
+    },
+    {
+      "category": "electrical",
+      "mode": "prepare_only",
+      "per_incident_cap": "900.00",
+      "monthly_cap": "1800.00",
+      "currency": "USD",
+      "allowed_vendor_ids": ["northstar-electrical"],
+      "updated_at": "2026-01-30T10:05:00Z",
+      "updated_by": "Marcus R.",
+      "rationale": "Distinguished from lighting on purpose. Replacing a fitting is routine; work on a circuit is not, and Marcus R. wanted eyes on anything touching a distribution board even when the quote is small."
+    },
+    {
+      "category": "landscaping",
+      "mode": "prepare_only",
+      "per_incident_cap": "1000.00",
+      "monthly_cap": "2000.00",
+      "currency": "USD",
+      "allowed_vendor_ids": ["greenline-grounds"],
+      "updated_at": "2026-04-06T10:00:00Z",
+      "updated_by": "Ingrid B.",
+      "rationale": "Set to prepare-only after the Thornfield billing dispute in March 2026. Landscaping quotes turn out to be scope arguments more often than price arguments, and scope is a judgement the committee kept for itself. Thornfield is not on the allowed list, so even a human accepting their quote has to override deliberately."
+    },
+    {
+      "category": "waste",
+      "mode": "prepare_only",
+      "per_incident_cap": "400.00",
+      "monthly_cap": "800.00",
+      "currency": "USD",
+      "allowed_vendor_ids": [],
+      "updated_at": "2026-05-20T10:00:00Z",
+      "updated_by": "Simon O.",
+      "rationale": "Waste problems here are almost always scheduling with the council rather than something to buy. The empty vendor list is accurate: there is nobody to contact autonomously, so Steward drafts the letter and a human sends it."
+    },
+    {
+      "category": "fire_safety",
+      "mode": "prepare_only",
+      "per_incident_cap": "1000.00",
+      "monthly_cap": "2000.00",
+      "currency": "USD",
+      "allowed_vendor_ids": ["guardian-fire"],
+      "updated_at": "2026-07-03T09:40:00Z",
+      "updated_by": "Simon O.",
+      "rationale": "Deliberately never autonomous, however routine the annual inspection looks. A statutory obligation is signed off by a person who can be held to it."
+    },
+    {
+      "category": "meeting_admin",
+      "mode": "escalate_only",
+      "per_incident_cap": null,
+      "monthly_cap": null,
+      "currency": "USD",
+      "allowed_vendor_ids": [],
+      "updated_at": "2025-07-24T10:00:00Z",
+      "updated_by": "Simon O.",
+      "rationale": "Anything that is a disagreement between neighbours rather than a fault. Steward may draft the meeting notice and summarise what was said, and it may not contact anyone. Set after the July 2025 parking argument."
+    },
+    {
+      "category": "other",
+      "mode": "escalate_only",
+      "per_incident_cap": null,
+      "monthly_cap": null,
+      "currency": "USD",
+      "allowed_vendor_ids": [],
+      "updated_at": "2026-01-14T19:35:00Z",
+      "updated_by": "Simon O.",
+      "rationale": "The catch-all for anything triage could not confidently place. If Steward does not know what a thing is, it does not act on it."
+    }
+  ],
+  "deliberately_unconfigured": [
+    {
+      "category": "hvac",
+      "reason": "The A Block lobby unit is a real asset with a real failure mode and no policy row. A problem raised against it must escalate on the POLICY.MISSING rule rather than inheriting authority from anywhere. It is in the demo to show that the gap in the configuration is the safe direction."
+    }
+  ]
+}

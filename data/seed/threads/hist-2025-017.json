@@ -1,0 +1,50 @@
+{
+  "$comment": "The November 2025 A Block vibration job. This is the thread the console shows when Steward says the same fault was treated before and by whom. Synthetic; addresses are mailboxes on the project's own domains.",
+  "case_id": "hist-2025-017",
+  "subject": "Quote request: A Block elevator vibration on ascent",
+  "messages": [
+    {
+      "seq": 1,
+      "direction": "outbound",
+      "from": "Northgate Residence Management <management@site.narrativenode-labs.cloud>",
+      "to": ["meridian@vendors.narrativenode-labs.cloud", "coastline@vendors.narrativenode-labs.cloud"],
+      "reply_to": "case-4b7c19e2fa03@site.narrativenode-labs.cloud",
+      "sent_at": "2025-11-19T20:10:00Z",
+      "body": "Good evening,\n\nWe have a vibration and grinding noise on the A Block elevator, reported this evening. It occurs on ascent between roughly the fourth and fifth floors and is not present on descent. The car is otherwise operating normally and is still in service.\n\nAsset is our A Block traction unit, eight stops, installed 2014. You have both attended this car before.\n\nCould you send a quote and your earliest attendance date.\n\nNorthgate Residence Management"
+    },
+    {
+      "seq": 2,
+      "direction": "inbound",
+      "from": "Meridian Lift Services <meridian@vendors.narrativenode-labs.cloud>",
+      "to": ["case-4b7c19e2fa03@site.narrativenode-labs.cloud"],
+      "sent_at": "2025-11-20T00:04:00Z",
+      "body": "Good evening,\n\nVibration on ascent only, in one stretch of travel, usually means either worn guide shoes or rail alignment, and the two present the same way. We would want to check the alignment and the bracket fixings over the full run rather than assume the shoes.\n\n690 including labour, travel, a set of guide shoes and alignment correction if we find it out of tolerance. If the rails turn out to be the cause and the shoes are still serviceable the price does not change.\n\nEarliest attendance Friday 21 November, morning.\n\nMeridian Lift Services"
+    },
+    {
+      "seq": 3,
+      "direction": "inbound",
+      "from": "Coastline Elevator Co. <coastline@vendors.narrativenode-labs.cloud>",
+      "to": ["case-4b7c19e2fa03@site.narrativenode-labs.cloud"],
+      "sent_at": "2025-11-21T06:10:00Z",
+      "body": "Hello,\n\nWe can replace the guide shoes on this car for 520 all in.\n\nEarliest we have is Sunday 23 November, morning.\n\nCoastline Elevator Co."
+    },
+    {
+      "seq": 4,
+      "direction": "outbound",
+      "from": "Northgate Residence Management <management@site.narrativenode-labs.cloud>",
+      "to": ["coastline@vendors.narrativenode-labs.cloud"],
+      "reply_to": "case-4b7c19e2fa03@site.narrativenode-labs.cloud",
+      "sent_at": "2025-11-21T09:30:00Z",
+      "body": "Please go ahead on Sunday 23 November at 520 as quoted.\n\nNorthgate Residence Management"
+    },
+    {
+      "seq": 5,
+      "direction": "inbound",
+      "from": "Coastline Elevator Co. <coastline@vendors.narrativenode-labs.cloud>",
+      "to": ["case-4b7c19e2fa03@site.narrativenode-labs.cloud"],
+      "sent_at": "2025-11-23T14:02:00Z",
+      "body": "Work completed today. Guide shoes replaced on the car frame. We ran the car through the full travel afterwards and the vibration is gone.\n\nRails checked and within tolerance.\n\nInvoice to follow at 520.\n\nCoastline Elevator Co."
+    }
+  ],
+  "outcome_note": "The line worth reading twice is in the last message: rails checked and within tolerance. Seven weeks later the same company found two misaligned brackets in the same stretch of travel. Meridian's quote had proposed checking exactly that, for 170 more."
+}

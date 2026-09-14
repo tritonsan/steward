@@ -1,0 +1,92 @@
+{
+  "run_id": "20260911T092642Z-b701d1",
+  "passed": true,
+  "real_ses_delivery": true,
+  "real_s3_sns_sqs_ingress": true,
+  "real_model_extraction": true,
+  "local_isolated_runtime": true,
+  "synthetic_scenario": true,
+  "actual_supplier_contacted": false,
+  "real_work_or_payment": false,
+  "management_address": "management@steward.narrativenode-labs.cloud",
+  "vendor_address": "test-vendor@steward.narrativenode-labs.cloud",
+  "management_messages_delivered": 3,
+  "vendor_replies_processed": 2,
+  "runtime_restart_verified": true,
+  "final_status": "scheduled",
+  "stages": [
+    {
+      "stage": "isolated_resources_created",
+      "at": "2026-09-11T09:26:46.490998+00:00"
+    },
+    {
+      "stage": "isolated_route_ready",
+      "at": "2026-09-11T09:26:52.100837+00:00",
+      "original_rules_preserved": true
+    },
+    {
+      "stage": "rfq_delivered",
+      "at": "2026-09-11T09:26:52.693729+00:00",
+      "received_from": "management@steward.narrativenode-labs.cloud",
+      "received_by": "test-vendor@steward.narrativenode-labs.cloud"
+    },
+    {
+      "stage": "quote_sent",
+      "at": "2026-09-11T09:26:52.973689+00:00"
+    },
+    {
+      "stage": "quote_processed",
+      "at": "2026-09-11T09:26:59.003725+00:00",
+      "verdicts": {
+        "dmarcVerdict": "PASS",
+        "spamVerdict": "PASS",
+        "virusVerdict": "PASS"
+      }
+    },
+    {
+      "stage": "order_sent",
+      "at": "2026-09-11T09:27:07.206222+00:00",
+      "status": "awaiting_appointment"
+    },
+    {
+      "stage": "order_delivered",
+      "at": "2026-09-11T09:27:12.276566+00:00"
+    },
+    {
+      "stage": "runtime_restarted",
+      "at": "2026-09-11T09:27:12.609617+00:00",
+      "order_preserved": true
+    },
+    {
+      "stage": "appointment_sent",
+      "at": "2026-09-11T09:27:12.922799+00:00"
+    },
+    {
+      "stage": "appointment_processed",
+      "at": "2026-09-11T09:27:18.751323+00:00",
+      "verdicts": {
+        "dmarcVerdict": "PASS",
+        "spamVerdict": "PASS",
+        "virusVerdict": "PASS"
+      }
+    },
+    {
+      "stage": "appointment_confirmation_delivered",
+      "at": "2026-09-11T09:27:23.979073+00:00",
+      "status": "scheduled",
+      "logical_orders": 1,
+      "budget_reservations": 1
+    },
+    {
+      "stage": "temporary_routes_removed",
+      "at": "2026-09-11T09:27:25.353816+00:00",
+      "original_rules_preserved": true
+    }
+  ],
+  "limitations": [
+    "An operator requested quote comparison and approved the controlled order; the normal automatic 24-hour waiting period was not measured.",
+    "Application services ran locally with isolated SQLite state and real AWS channels.",
+    "The hosted Northgate demo still uses dry-run outbound delivery."
+  ],
+  "cleanup_verified": true
+}

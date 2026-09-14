@@ -1,0 +1,14 @@
+.venv
+.scratch
+**/__pycache__
+**/node_modules
+**/cdk.out
+**/cdk.*.out
+**/*.db
+**/*.db-*
+**/*.local.json
+.env*
+tests
+data/evaluation
+artifacts
+web/dist

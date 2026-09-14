@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "pytest_exit_code": 0,
+  "tests": {
+    "tests": 180,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 180
+  },
+  "scenarios": {
+    "unique_scenarios": 20,
+    "runs": 60,
+    "complete_twenty_by_three_matrix": true,
+    "successful_runs": 60,
+    "outcomes": {
+      "verified_outcome": 33,
+      "human_review": 27
+    }
+  },
+  "errors": [],
+  "run_id": "20260914T070421Z-d15d2654",
+  "recorded_at": "2026-09-14T07:05:01.051938+00:00",
+  "python_source_sha256": "2c8f69e412b3e322c76636377c8a12ee766aef958175eda6f0f9c04a0134e8b4",
+  "evidence_directory": "hackathon-runs\\20260914T070421Z-d15d2654",
+  "simulated_inputs": true,
+  "live_model_calls": false,
+  "real_channel_delivery": false,
+  "scope": "Maintenance and community decisions, API roles, durable continuation, channel input validation and outbox boundaries on isolated SQLite stores.",
+  "limitations": [
+    "Model extraction and planning ports use deterministic test fixtures.",
+    "Deployed AWS services and real Telegram/SES delivery need separate evidence.",
+    "PostgreSQL, browser accessibility and live model quality need separate evidence.",
+    "No measured field impact or reduction in human intervention is claimed."
+  ]
+}

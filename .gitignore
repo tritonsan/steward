@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+app_password*.txt
+
+# AWS CDK
+infra/cdk.out/
+infra/cdk.*.out/
+infra/node_modules/
+cdk.context.json
+
+# Node / web UI
+node_modules/
+web/dist/
+web/.vite/
+
+# Local scratch
+.scratch/
+*.local.json
+local_state/
+*.db
+*.db-wal
+*.db-shm
+*.dump
+
+# Publish only reviewed aggregate/synthetic evidence. Raw channel reports contain
+# private chat context and live case reply tokens and must stay local.
+artifacts/validation/*
+!artifacts/validation/triage-reserve-v2.json
+!artifacts/validation/quote-portfolios-regression.json
+!artifacts/validation/memory-counterfactuals.json
+!artifacts/validation/dependency-audit.json
+!artifacts/validation/hackathon-acceptance.json
+!artifacts/validation/final-review.json
+!artifacts/validation/final-ui-review.json
+!artifacts/validation/controlled-mail-roundtrip.json
+!artifacts/validation/cloud-telegram-delivery.json
+artifacts/release/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json

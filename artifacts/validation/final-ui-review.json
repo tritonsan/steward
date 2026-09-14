@@ -1,0 +1,28 @@
+{
+  "checked_on": "2026-09-10",
+  "environment": "Isolated local Northgate API with current production web build",
+  "method": "CUA browser interaction, accessibility tree and screenshots",
+  "synthetic_data": true,
+  "real_model_calls": false,
+  "real_outgoing_delivery": false,
+  "viewports": ["desktop 1280x720", "mobile 390x844"],
+  "checks": [
+    {"flow": "Open case panel receives independent API state transition over SSE without a browser refresh", "result": "passed", "viewport": "desktop"},
+    {"flow": "Source evidence and back-to-case focus return", "result": "passed", "viewport": "desktop"},
+    {"flow": "Manager approval with a required note", "result": "passed", "viewport": "desktop"},
+    {"flow": "Reject repair with evidence and enter warranty review", "result": "passed", "viewport": "mobile"},
+    {"flow": "Record community action completion then verify its outcome", "result": "passed", "viewport": "mobile"},
+    {"flow": "Community outcome excludes maintenance verification buttons after fix", "result": "passed", "viewport": "mobile"},
+    {"flow": "Unsaved permission limit survives refresh; explicit save succeeds", "result": "passed", "viewport": "mobile"},
+    {"flow": "Resident has cases and personal invitations without management navigation or quotes", "result": "passed", "viewport": "mobile"},
+    {"flow": "Resident meeting availability persists and becomes Update availability", "result": "passed", "viewport": "mobile"},
+    {"flow": "Personal clarification answer removes only the completed response card", "result": "passed", "viewport": "mobile"},
+    {"flow": "Escape closes case panel and restores initiating Review case button focus", "result": "passed", "viewport": "mobile"},
+    {"flow": "No horizontal document overflow", "result": "passed", "viewport": "mobile", "document_width": 375, "viewport_width": 390}
+  ],
+  "limitations": [
+    "These actions used an isolated fixture with deterministic model ports and simulated delivery.",
+    "This is a targeted browser check, not an independent usability study or a complete screen-reader/automated accessibility certification.",
+    "Cognito hosted sign-in was checked separately against the real AWS application."
+  ]
+}

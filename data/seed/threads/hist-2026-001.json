@@ -1,0 +1,42 @@
+{
+  "$comment": "The January 2026 recall. Synthetic.",
+  "case_id": "hist-2026-001",
+  "subject": "A Block elevator vibration has returned after November repair",
+  "messages": [
+    {
+      "seq": 1,
+      "direction": "outbound",
+      "from": "Northgate Residence Management <management@site.narrativenode-labs.cloud>",
+      "to": ["coastline@vendors.narrativenode-labs.cloud"],
+      "reply_to": "case-91d05ac37e18@site.narrativenode-labs.cloud",
+      "sent_at": "2026-01-08T08:05:00Z",
+      "body": "Good morning,\n\nThe vibration you attended on 23 November has returned on our A Block elevator. Residents report it in the same stretch of travel, on ascent, with the same noise.\n\nYour report on completion stated the rails were within tolerance and that the guide shoes had been replaced. Given the fault has returned within seven weeks we would like you to attend again and look at the rail alignment and bracket fixings this time.\n\nWe are treating this as a return to your own work rather than a new job.\n\nNorthgate Residence Management"
+    },
+    {
+      "seq": 2,
+      "direction": "inbound",
+      "from": "Coastline Elevator Co. <coastline@vendors.narrativenode-labs.cloud>",
+      "to": ["case-91d05ac37e18@site.narrativenode-labs.cloud"],
+      "sent_at": "2026-01-10T01:05:00Z",
+      "body": "Hello,\n\nUnderstood, we will attend at no charge as a goodwill visit.\n\nFirst availability is Tuesday 13 January.\n\nCoastline Elevator Co."
+    },
+    {
+      "seq": 3,
+      "direction": "inbound",
+      "from": "Coastline Elevator Co. <coastline@vendors.narrativenode-labs.cloud>",
+      "to": ["case-91d05ac37e18@site.narrativenode-labs.cloud"],
+      "sent_at": "2026-01-13T15:30:00Z",
+      "body": "Attended today. We found two rail brackets out of alignment between the fourth and fifth floors and corrected them. Guide shoes were showing uneven wear consistent with that, so we replaced them again.\n\nNo charge for this visit.\n\nCoastline Elevator Co."
+    },
+    {
+      "seq": 4,
+      "direction": "outbound",
+      "from": "Northgate Residence Management <management@site.narrativenode-labs.cloud>",
+      "to": ["coastline@vendors.narrativenode-labs.cloud"],
+      "reply_to": "case-91d05ac37e18@site.narrativenode-labs.cloud",
+      "sent_at": "2026-01-14T09:15:00Z",
+      "body": "Thank you for attending at no charge.\n\nFor our records: the misaligned brackets you corrected today are in the same stretch of travel that was reported in November, when the rails were assessed as within tolerance. We are noting that on the file.\n\nNorthgate Residence Management"
+    }
+  ],
+  "outcome_note": "The community got the repair for free and still lost eight weeks and paid 520 for a fix that did not address the cause. The committee agreed that evening to stop choosing elevator work on price alone. The agreement was verbal, was never written down anywhere retrievable, and is exactly the kind of institutional decision this project is built to keep."
+}

@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-09-13T12:55:39.677964+00:00",
+  "stack": "UPDATE_COMPLETE",
+  "services": [
+    {
+      "kind": "api",
+      "running": 1,
+      "pending": 0,
+      "stable": true,
+      "image": "47f9e2ed64dc586a",
+      "mail_execution_mode": "dry_run",
+      "telegram_delivery_mode": "live"
+    },
+    {
+      "kind": "worker",
+      "running": 1,
+      "pending": 0,
+      "stable": true,
+      "image": "47f9e2ed64dc586a",
+      "mail_execution_mode": "dry_run",
+      "telegram_delivery_mode": "live"
+    }
+  ],
+  "group_connected": true,
+  "telegram_delivery_mode": "live",
+  "delivery_paused": false,
+  "test_delivery": {
+    "status": "delivered",
+    "delivered_at": "2026-09-13T12:54:52.482478+00:00",
+    "provider_message_id": "7",
+    "error": null
+  }
+}

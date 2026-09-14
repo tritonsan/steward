@@ -1,0 +1,336 @@
+{
+  "live_model_calls": true,
+  "simulated_histories": true,
+  "model": "amazon.nova-pro-v1:0",
+  "passed": true,
+  "limitations": [
+    "Controlled counterfactual; not a real vendor ranking or an impact pilot.",
+    "Identical scope and availability isolate the effect of price and verified recurrence."
+  ],
+  "results": [
+    {
+      "mode": "without_memory",
+      "repeat": 1,
+      "recommendation": {
+        "recommended_quote_id": "quote-a",
+        "rationale": "Quote-a is selected due to its lower price compared to quote-b, with both quotes having the same scope and timing. There is no vendor history to differentiate between them.",
+        "source_ids": [
+          "quote-a"
+        ],
+        "alternatives": [
+          {
+            "quote_id": "quote-b",
+            "reason_not_selected": "Higher price compared to quote-a."
+          }
+        ],
+        "decision_changes_when": [
+          "New evidence shows better performance or lower price for quote-b."
+        ]
+      },
+      "sources_valid": true,
+      "history_sensitive": true
+    },
+    {
+      "mode": "without_memory",
+      "repeat": 2,
+      "recommendation": {
+        "recommended_quote_id": "quote-a",
+        "rationale": "Quote-a is selected due to its lower price of $500 compared to quote-b's $650, with both quotes offering the same scope and timing. There is no vendor history available to differentiate between the two vendors.",
+        "source_ids": [
+          "quote-a"
+        ],
+        "alternatives": [
+          {
+            "quote_id": "quote-b",
+            "reason_not_selected": "Higher price compared to quote-a."
+          }
+        ],
+        "decision_changes_when": [
+          "New evidence shows better performance or lower price for quote-b."
+        ]
+      },
+      "sources_valid": true,
+      "history_sensitive": true
+    },
+    {
+      "mode": "without_memory",
+      "repeat": 3,
+      "recommendation": {
+        "recommended_quote_id": "quote-a",
+        "rationale": "Quote-a is selected due to its lower price compared to quote-b, with both quotes having identical scopes and timing. There is no vendor history available to differentiate between the two vendors.",
+        "source_ids": [
+          "quote-a"
+        ],
+        "alternatives": [
+          {
+            "quote_id": "quote-b",
+            "reason_not_selected": "Higher price compared to quote-a."
+          }
+        ],
+        "decision_changes_when": [
+          "New evidence shows better performance or lower price for quote-b."
+        ]
+      },
+      "sources_valid": true,
+      "history_sensitive": true
+    },
+    {
+      "mode": "history_a_repeats",
+      "repeat": 1,
+      "recommendation": {
+        "recommended_quote_id": "quote-b",
+        "rationale": "Based on vendor history, vendor-b has a better track record with no recurrence of the issue, making it the more reliable choice despite the higher cost.",
+        "source_ids": [
+          "quote-b",
+          "history-b-1",
+          "history-b-2",
+          "history-b-3",
+          "history-b-4",
+          "history-b-5",
+          "history-b-6",
+          "history-b-7",
+          "history-b-8",
+          "history-b-9",
+          "history-b-10",
+          "history-b-11",
+          "history-b-12",
+          "history-b-13",
+          "history-b-14",
+          "history-b-15",
+          "history-b-16",
+          "history-b-17",
+          "history-b-18",
+          "history-b-19",
+          "history-b-20"
+        ],
+        "alternatives": [
+          {
+            "quote_id": "quote-a",
+            "reason_not_selected": "Vendor-a has a high repeat failure rate of 0.9, indicating poor historical performance."
+          }
+        ],
+        "decision_changes_when": [
+          "New evidence shows a significant improvement in vendor-a's repeat failure rate.",
+          "Vendor-b's performance deteriorates significantly."
+        ]
+      },
+      "sources_valid": true,
+      "history_sensitive": true
+    },
+    {
+      "mode": "history_a_repeats",
+      "repeat": 2,
+      "recommendation": {
+        "recommended_quote_id": "quote-b",
+        "rationale": "Based on the provided information, the recommended quote is 'quote-b' from vendor 'Orchard Maintenance'. This decision is primarily driven by the vendor history, where vendor-a has a high repeat failure rate of 0.9, indicating that the issue recurred in 90% of the cases. In contrast, vendor-b has a repeat failure rate of 0.0, suggesting no recurrence of the issue in any of the cases. Although 'quote-a' is cheaper, the historical performance of vendor-a is significantly worse, making 'quote-b' the more reliable choice despite the higher cost. The decision would change if new evidence showed a significant improvement in vendor-a's repeat failure rate or if vendor-b's performance deteriorated.",
+        "source_ids": [
+          "quote-b",
+          "history-b-1",
+          "history-b-2",
+          "history-b-3",
+          "history-b-4",
+          "history-b-5",
+          "history-b-6",
+          "history-b-7",
+          "history-b-8",
+          "history-b-9",
+          "history-b-10",
+          "history-b-11",
+          "history-b-12",
+          "history-b-13",
+          "history-b-14",
+          "history-b-15",
+          "history-b-16",
+          "history-b-17",
+          "history-b-18",
+          "history-b-19",
+          "history-b-20"
+        ],
+        "alternatives": [
+          {
+            "quote_id": "quote-a",
+            "reason_not_selected": "Vendor-a has a high repeat failure rate of 0.9, indicating poor historical performance."
+          }
+        ],
+        "decision_changes_when": [
+          "New evidence shows a significant improvement in vendor-a's repeat failure rate.",
+          "New evidence shows a deterioration in vendor-b's performance."
+        ]
+      },
+      "sources_valid": true,
+      "history_sensitive": true
+    },
+    {
+      "mode": "history_a_repeats",
+      "repeat": 3,
+      "recommendation": {
+        "recommended_quote_id": "quote-b",
+        "rationale": "Based on the provided information, the recommended quote is 'quote-b' from vendor 'Orchard Maintenance'. This decision is primarily driven by the vendor history, where vendor-b has a repeat failure rate of 0.0, indicating no recurrence of the issue after the work was performed. In contrast, vendor-a has a high repeat failure rate of 0.9, suggesting that the issue often recurs after their work. Although quote-a is cheaper, the historical performance of vendor-b is significantly better, making it the preferred choice despite the higher cost. The other offered option, 'quote-a', was not selected due to the poor historical performance of vendor-a, as evidenced by the high repeat failure rate. The decision would change if new evidence showed that vendor-a had improved their performance or if vendor-b's performance deteriorated.",
+        "source_ids": [
+          "quote-b",
+          "history-b-1",
+          "history-b-2",
+          "history-b-3",
+          "history-b-4",
+          "history-b-5",
+          "history-b-6",
+          "history-b-7",
+          "history-b-8",
+          "history-b-9",
+          "history-b-10",
+          "history-b-11",
+          "history-b-12",
+          "history-b-13",
+          "history-b-14",
+          "history-b-15",
+          "history-b-16",
+          "history-b-17",
+          "history-b-18",
+          "history-b-19",
+          "history-b-20"
+        ],
+        "alternatives": [
+          {
+            "quote_id": "quote-a",
+            "reason_not_selected": "Vendor-a has a high repeat failure rate of 0.9, indicating poor historical performance."
+          }
+        ],
+        "decision_changes_when": [
+          "New evidence shows vendor-a has improved performance.",
+          "New evidence shows vendor-b's performance has deteriorated."
+        ]
+      },
+      "sources_valid": true,
+      "history_sensitive": true
+    },
+    {
+      "mode": "history_b_repeats",
+      "repeat": 1,
+      "recommendation": {
+        "recommended_quote_id": "quote-a",
+        "rationale": "The recommended quote is 'quote-a' from vendor 'Harbor Maintenance' due to their successful history with similar issues (0.0% repeat failure rate) compared to vendor 'Orchard Maintenance' which has a high repeat failure rate of 0.9. The scope, timing, and price are identical for both quotes, so the vendor history is the deciding factor.",
+        "source_ids": [
+          "quote-a",
+          "history-a-1",
+          "history-a-2",
+          "history-a-3",
+          "history-a-4",
+          "history-a-5",
+          "history-a-6",
+          "history-a-7",
+          "history-a-8",
+          "history-a-9",
+          "history-a-10",
+          "history-a-11",
+          "history-a-12",
+          "history-a-13",
+          "history-a-14",
+          "history-a-15",
+          "history-a-16",
+          "history-a-17",
+          "history-a-18",
+          "history-a-19",
+          "history-a-20"
+        ],
+        "alternatives": [
+          {
+            "quote_id": "quote-b",
+            "reason_not_selected": "Vendor has a high repeat failure rate of 0.9."
+          }
+        ],
+        "decision_changes_when": [
+          "New evidence shows a significant improvement in vendor 'Orchard Maintenance's performance.",
+          "New evidence shows a decline in vendor 'Harbor Maintenance's performance."
+        ]
+      },
+      "sources_valid": true,
+      "history_sensitive": true
+    },
+    {
+      "mode": "history_b_repeats",
+      "repeat": 2,
+      "recommendation": {
+        "recommended_quote_id": "quote-a",
+        "rationale": "The recommended quote is 'quote-a' from vendor 'Harbor Maintenance' due to their proven track record with a 0.0% repeat failure rate and successful resolution of similar issues in the past. Vendor 'Orchard Maintenance' has a high repeat failure rate of 0.9, indicating a less reliable service. The scope, timing, and price are identical for both quotes, so the vendor history is the deciding factor.",
+        "source_ids": [
+          "quote-a",
+          "history-a-1",
+          "history-a-2",
+          "history-a-3",
+          "history-a-4",
+          "history-a-5",
+          "history-a-6",
+          "history-a-7",
+          "history-a-8",
+          "history-a-9",
+          "history-a-10",
+          "history-a-11",
+          "history-a-12",
+          "history-a-13",
+          "history-a-14",
+          "history-a-15",
+          "history-a-16",
+          "history-a-17",
+          "history-a-18",
+          "history-a-19",
+          "history-a-20"
+        ],
+        "alternatives": [
+          {
+            "quote_id": "quote-b",
+            "reason_not_selected": "Vendor has a high repeat failure rate of 0.9 and has not consistently resolved similar issues in the past."
+          }
+        ],
+        "decision_changes_when": [
+          "New evidence shows a significant improvement in vendor 'Orchard Maintenance's performance.",
+          "New evidence shows a decline in vendor 'Harbor Maintenance's performance."
+        ]
+      },
+      "sources_valid": true,
+      "history_sensitive": true
+    },
+    {
+      "mode": "history_b_repeats",
+      "repeat": 3,
+      "recommendation": {
+        "recommended_quote_id": "quote-a",
+        "rationale": "Vendor Harbor Maintenance has a proven track record of successfully resolving similar issues without recurrence, as evidenced by 20 successful cases. In contrast, vendor Orchard Maintenance has a high repeat failure rate, with 18 out of 20 cases showing the same fault returning within 30 days.",
+        "source_ids": [
+          "quote-a",
+          "history-a-1",
+          "history-a-2",
+          "history-a-3",
+          "history-a-4",
+          "history-a-5",
+          "history-a-6",
+          "history-a-7",
+          "history-a-8",
+          "history-a-9",
+          "history-a-10",
+          "history-a-11",
+          "history-a-12",
+          "history-a-13",
+          "history-a-14",
+          "history-a-15",
+          "history-a-16",
+          "history-a-17",
+          "history-a-18",
+          "history-a-19",
+          "history-a-20"
+        ],
+        "alternatives": [
+          {
+            "quote_id": "quote-b",
+            "reason_not_selected": "Vendor Orchard Maintenance has a high repeat failure rate for similar issues."
+          }
+        ],
+        "decision_changes_when": [
+          "New evidence shows significant improvement in Orchard Maintenance's performance.",
+          "Evidence shows a decline in Harbor Maintenance's performance."
+        ]
+      },
+      "sources_valid": true,
+      "history_sensitive": true
+    }
+  ]
+}

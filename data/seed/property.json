@@ -1,0 +1,157 @@
+{
+  "$comment": "Synthetic. No real property, residents, or contact details.",
+  "reference_date": "2026-09-10T09:00:00Z",
+  "property": {
+    "property_id": "northgate",
+    "name": "Northgate Residence",
+    "description": "A four-block residential complex of 96 units, completed in 2014. Shared facilities are an outdoor pool, a central courtyard, an underground garage, and a gated main entrance. Day-to-day decisions are made by a three-person management committee elected by residents, and everything else happens in a group chat with 180 members.",
+    "units": 96,
+    "approximate_residents": 240,
+    "completed_year": 2014,
+    "currency": "USD",
+    "timezone": "UTC",
+    "chat": {
+      "source": "telegram",
+      "chat_id": "-1002481179934",
+      "title": "Northgate Residence - Residents",
+      "member_count": 180
+    },
+    "management_committee": ["Simon O.", "Ingrid B.", "Marcus R."]
+  },
+  "blocks": [
+    { "block": "A", "floors": 8, "units": 24 },
+    { "block": "B", "floors": 8, "units": 24 },
+    { "block": "C", "floors": 8, "units": 24 },
+    { "block": "D", "floors": 8, "units": 24 }
+  ],
+  "assets": [
+    {
+      "asset_id": "elevator-a",
+      "label": "A Block Elevator",
+      "category": "elevator",
+      "block": "A",
+      "installed_on": "2014-06-18",
+      "notes": "Traction elevator, eight stops, 630 kg. The oldest control board of the four; the manufacturer stopped supplying its door controller in 2023, so parts come from refurbishers."
+    },
+    {
+      "asset_id": "elevator-b",
+      "label": "B Block Elevator",
+      "category": "elevator",
+      "block": "B",
+      "installed_on": "2014-06-18",
+      "notes": "Identical hardware to A Block. Had its encoder replaced in December 2025."
+    },
+    {
+      "asset_id": "elevator-c",
+      "label": "C Block Elevator",
+      "category": "elevator",
+      "block": "C",
+      "installed_on": "2014-07-02",
+      "notes": "Machine room faces west and runs hot in summer. A ventilation fan was fitted in May 2025."
+    },
+    {
+      "asset_id": "elevator-d",
+      "label": "D Block Elevator",
+      "category": "elevator",
+      "block": "D",
+      "installed_on": "2014-07-02",
+      "notes": "Control panel was partially rebuilt in February 2026."
+    },
+    {
+      "asset_id": "pool-main",
+      "label": "Outdoor Pool and Filtration",
+      "category": "pool",
+      "block": null,
+      "installed_on": "2014-05-30",
+      "notes": "Open May to September. Sand filter, single circulation pump. Heavy use on weekends."
+    },
+    {
+      "asset_id": "grounds-courtyard",
+      "label": "Central Courtyard",
+      "category": "landscaping",
+      "block": null,
+      "installed_on": null,
+      "notes": "Lawn, six mature trees, drip irrigation installed 2019. The irrigation manifold has been repaired once."
+    },
+    {
+      "asset_id": "grounds-front",
+      "label": "Front Entrance Beds",
+      "category": "landscaping",
+      "block": null,
+      "installed_on": null,
+      "notes": "Seasonal planting twice a year. The first thing anyone sees from the street, which is why residents raise it often."
+    },
+    {
+      "asset_id": "common-areas",
+      "label": "Lobbies and Stairwells",
+      "category": "common_area_cleaning",
+      "block": null,
+      "installed_on": null,
+      "notes": "Four lobbies, four stairwells. Cleaned three times a week under a standing arrangement; deep cleans are commissioned separately."
+    },
+    {
+      "asset_id": "garage-lighting",
+      "label": "Underground Garage Lighting",
+      "category": "lighting",
+      "block": null,
+      "installed_on": "2014-06-01",
+      "notes": "Two circuits, 48 fittings, converted to LED in 2021. Circuit two has tripped twice."
+    },
+    {
+      "asset_id": "main-gate",
+      "label": "Main Gate Barrier and Intercom",
+      "category": "access_control",
+      "block": null,
+      "installed_on": "2017-03-12",
+      "notes": "Barrier arm, plate reader, and four block intercom panels on one controller."
+    },
+    {
+      "asset_id": "booster-pump",
+      "label": "Water Booster Pump Room",
+      "category": "plumbing",
+      "block": null,
+      "installed_on": "2014-05-20",
+      "notes": "Two pumps in duty and standby. Upper floors lose pressure first when either fails."
+    },
+    {
+      "asset_id": "waste-area",
+      "label": "Waste Collection Area",
+      "category": "waste",
+      "block": null,
+      "installed_on": null,
+      "notes": "Six bins in an enclosure by the service gate. Municipal collection, not a contracted vendor, which is why problems here are usually scheduling rather than repair."
+    },
+    {
+      "asset_id": "fire-panel",
+      "label": "Fire Alarm Panel and Detectors",
+      "category": "fire_safety",
+      "block": null,
+      "installed_on": "2014-04-28",
+      "notes": "Addressable panel covering all four blocks. Inspection is a legal requirement and is never left to an agent's discretion."
+    },
+    {
+      "asset_id": "lobby-hvac",
+      "label": "A Block Lobby HVAC Unit",
+      "category": "hvac",
+      "block": "A",
+      "installed_on": "2019-09-14",
+      "notes": "Single split unit heating and cooling the A Block lobby. Deliberately has no approval policy configured, so a problem raised against it demonstrates that an unconfigured category escalates instead of assuming authority."
+    }
+  ],
+  "residents": [
+    { "display_name": "Daniel K.", "block": "A", "note": "Reports problems quickly and in detail." },
+    { "display_name": "Marcus R.", "block": "A", "note": "On the management committee." },
+    { "display_name": "Amelia T.", "block": "A", "note": "Works nights, notices things at odd hours." },
+    { "display_name": "Priya S.", "block": "A", "note": "Has a toddler and a stroller, so the elevator matters more to her than to most." },
+    { "display_name": "Simon O.", "block": "B", "note": "Chairs the management committee." },
+    { "display_name": "Hannah W.", "block": "B", "note": "Keeps a private list of who was called for what, which is the habit Steward is meant to replace." },
+    { "display_name": "Tomas L.", "block": "B", "note": "Quiet, posts once or twice a year." },
+    { "display_name": "Ingrid B.", "block": "C", "note": "On the management committee, handles the money." },
+    { "display_name": "Kwame A.", "block": "C", "note": "Organises the summer pool cleaning day." },
+    { "display_name": "James D.", "block": "C", "note": "Complains about the garage lighting, correctly, every winter." },
+    { "display_name": "Elena V.", "block": "D", "note": "Gardener by trade, opinionated about the landscaping quotes." },
+    { "display_name": "Noah F.", "block": "D", "note": "New in 2026, has no memory of earlier incidents." },
+    { "display_name": "Mei-Ling C.", "block": "D", "note": "Raises the tree overhanging her balcony most autumns." },
+    { "display_name": "Rafael G.", "block": "D", "note": "Posts a lot, not always about problems." }
+  ]
+}

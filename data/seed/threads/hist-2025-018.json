@@ -1,0 +1,50 @@
+{
+  "$comment": "December 2025, B Block levelling. Included as the contrast case: the same community, three weeks later, choosing the quote that proposed to find a cause. Synthetic.",
+  "case_id": "hist-2025-018",
+  "subject": "Quote request: B Block elevator levelling error has returned and worsened",
+  "messages": [
+    {
+      "seq": 1,
+      "direction": "outbound",
+      "from": "Northgate Residence Management <management@site.narrativenode-labs.cloud>",
+      "to": ["meridian@vendors.narrativenode-labs.cloud", "coastline@vendors.narrativenode-labs.cloud"],
+      "reply_to": "case-7e2f8b04c5d9@site.narrativenode-labs.cloud",
+      "sent_at": "2025-12-02T08:10:00Z",
+      "body": "Good morning,\n\nThe ground floor levelling error on our B Block elevator has returned and is worse than before. We estimate around 50 mm now. A resident tripped getting out this morning.\n\nFor context, this was adjusted on 19 September, when the ground floor levelling sensor was set. It held for about eleven weeks.\n\nWe would like a quote that addresses why it is drifting rather than resetting it again.\n\nNorthgate Residence Management"
+    },
+    {
+      "seq": 2,
+      "direction": "inbound",
+      "from": "Meridian Lift Services <meridian@vendors.narrativenode-labs.cloud>",
+      "to": ["case-7e2f8b04c5d9@site.narrativenode-labs.cloud"],
+      "sent_at": "2025-12-02T11:16:00Z",
+      "body": "Good morning,\n\nA levelling error that returns after a sensor adjustment, and returns worse, is usually the shaft encoder rather than the sensor. The sensor adjustment moves the stopping point; it does not fix position feedback that is drifting under load. That would explain both the eleven weeks and the fact that it is now further out.\n\nWe would test the encoder under load, replace it if it is drifting, and recalibrate levelling at all eight stops. 890 including the encoder, labour and travel. If the encoder tests clean we will tell you and the price drops to 380 for the recalibration alone.\n\nWe can attend tomorrow, Wednesday 3 December, morning.\n\nMeridian Lift Services"
+    },
+    {
+      "seq": 3,
+      "direction": "inbound",
+      "from": "Coastline Elevator Co. <coastline@vendors.narrativenode-labs.cloud>",
+      "to": ["case-7e2f8b04c5d9@site.narrativenode-labs.cloud"],
+      "sent_at": "2025-12-03T13:10:00Z",
+      "body": "Hello,\n\nWe can re-adjust the ground floor levelling sensor for 410.\n\nEarliest attendance Monday 8 December.\n\nCoastline Elevator Co."
+    },
+    {
+      "seq": 4,
+      "direction": "outbound",
+      "from": "Northgate Residence Management <management@site.narrativenode-labs.cloud>",
+      "to": ["meridian@vendors.narrativenode-labs.cloud"],
+      "reply_to": "case-7e2f8b04c5d9@site.narrativenode-labs.cloud",
+      "sent_at": "2025-12-02T14:40:00Z",
+      "body": "Please attend tomorrow morning as offered, at 890 with the reduction if the encoder tests clean.\n\nNorthgate Residence Management"
+    },
+    {
+      "seq": 5,
+      "direction": "inbound",
+      "from": "Meridian Lift Services <meridian@vendors.narrativenode-labs.cloud>",
+      "to": ["case-7e2f8b04c5d9@site.narrativenode-labs.cloud"],
+      "sent_at": "2025-12-03T15:40:00Z",
+      "body": "Completed today.\n\nThe encoder was drifting under load, roughly 40 mm of accumulated error on a loaded ascent to the ground floor. Replaced it and recalibrated levelling at all eight stops. The September sensor adjustment had been compensating for the drift, which is why it appeared fixed and then got worse as the encoder degraded further.\n\nFull quoted price applies, 890.\n\nMeridian Lift Services"
+    }
+  ],
+  "outcome_note": "Coastline's reply arrived after the work was already booked, quoting 410 to re-adjust the sensor they had adjusted in September. Total spent on this fault across both attempts was 1,370, against Meridian's original September quote of 610 to investigate the cause. The archive contains the same lesson twice, on two different elevators, three weeks apart, and the community still had no way to retrieve it in September 2026."
+}

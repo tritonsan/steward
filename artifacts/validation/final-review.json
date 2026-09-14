@@ -1,0 +1,106 @@
+{
+  "checked_at": "2026-09-10T13:44:58.260030+00:00",
+  "status": "ready_for_submission_preparation",
+  "scope": "Synthetic demonstration with real Bedrock/AgentCore inference and verified Telegram intake; outgoing application delivery remains simulated",
+  "python_regression": {
+    "passed": 448,
+    "postgres_gated_skipped": 16,
+    "failed": 0
+  },
+  "postgres": {
+    "lifecycle": 16,
+    "telegram": 20,
+    "proactive": 3,
+    "failed": 0
+  },
+  "offline_acceptance": {
+    "passed": true,
+    "checks": 180,
+    "scenario_runs": 60,
+    "verified_outcomes": 33,
+    "expected_human_reviews": 27,
+    "python_source_sha256": "c11c750b8af62682d74f2cf0f077c1312964a52d37baa903c4d801013eb67ac8"
+  },
+  "frontend": {
+    "tests_passed": 5,
+    "production_build": "passed",
+    "formatting": "passed"
+  },
+  "live_deployment": {
+    "checked_at": "2026-09-10T13:44:58.260030+00:00",
+    "url": "https://d35nbywkoth58f.cloudfront.net",
+    "stack_status": "UPDATE_COMPLETE",
+    "release": "ecef682d8482ee11",
+    "frontend_current_bundle": true,
+    "anonymous_api_status": 401,
+    "authenticated_endpoints": {
+      "me": 200,
+      "cases": 200,
+      "tasks": 200,
+      "memory": 200,
+      "settings": 200,
+      "directory": 200,
+      "suggestions": 200,
+      "appointment-rules": 200,
+      "inbound-reviews": 200,
+      "telegram/group": 200
+    },
+    "case_count": 2,
+    "suggestion_history_count": 4,
+    "suggestions_count": 4,
+    "duplicate_suggestions": 0,
+    "telegram": {
+      "configured": true,
+      "personal_linked": true,
+      "group_connected": true,
+      "messages_recorded": 2,
+      "last_issue": false
+    },
+    "services": [
+      {
+        "kind": "api",
+        "desired": 1,
+        "running": 1,
+        "pending": 0,
+        "current_image": true,
+        "execution_mode": "dry_run",
+        "deployment_rollout": [
+          "COMPLETED"
+        ]
+      },
+      {
+        "kind": "worker",
+        "desired": 1,
+        "running": 1,
+        "pending": 0,
+        "current_image": true,
+        "execution_mode": "dry_run",
+        "deployment_rollout": [
+          "COMPLETED"
+        ]
+      }
+    ],
+    "passed": true
+  },
+  "known_limits": [
+    "The complete hosted Telegram-to-verified-repair journey remains open; controlled real RFQ/quote/order/appointment mail passed separately on 2026-09-11 with isolated local state.",
+    "Historical model metrics are synthetic and not a field-study result.",
+    "No measured time saving or guaranteed judging score.",
+    "RDS PITR/previous-image rollback and independent user study remain open."
+  ],
+  "submission_handoff": [
+    "Public source repository",
+    "Submission description and required fields",
+    "Architecture diagram supplied in docs/ARCHITECTURE.md",
+    "Working demo video at most five minutes",
+    "Provisioned reviewer access without owner credentials"
+  ],
+  "controlled_mail_followup": {
+    "verified_at": "2026-09-11",
+    "report": "artifacts/validation/controlled-mail-roundtrip.json",
+    "real_emails": 5,
+    "local_isolated_runtime": true,
+    "hosted_outbound_mode": "dry_run",
+    "targeted_tests_passed": 22
+  }
+}

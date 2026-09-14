@@ -1,0 +1,66 @@
+{
+  "corpus_sha256": "58c6a311c2bb429873f7036b58109221bd83f10dbeaed38e4d5cba0f67fc511a",
+  "prompt_sha256": "e83241beacebf5695972ac745f74df9c5d6be23f3632fe85006e282c41ccee20",
+  "model": "amazon.nova-pro-v1:0",
+  "live_model_calls": true,
+  "simulated_inputs": true,
+  "sample_count": 200,
+  "accuracy": 1.0,
+  "per_category": {
+    "elevator": {
+      "count": 40,
+      "accuracy": 1.0
+    },
+    "pool": {
+      "count": 10,
+      "accuracy": 1.0
+    },
+    "landscaping": {
+      "count": 20,
+      "accuracy": 1.0
+    },
+    "common_area_cleaning": {
+      "count": 10,
+      "accuracy": 1.0
+    },
+    "lighting": {
+      "count": 10,
+      "accuracy": 1.0
+    },
+    "access_control": {
+      "count": 10,
+      "accuracy": 1.0
+    },
+    "plumbing": {
+      "count": 10,
+      "accuracy": 1.0
+    },
+    "waste": {
+      "count": 10,
+      "accuracy": 1.0
+    },
+    "fire_safety": {
+      "count": 10,
+      "accuracy": 1.0
+    },
+    "hvac": {
+      "count": 10,
+      "accuracy": 1.0
+    },
+    "non_actionable": {
+      "count": 40,
+      "accuracy": 1.0
+    },
+    "community_decision": {
+      "count": 20,
+      "accuracy": 1.0
+    }
+  },
+  "acceptance_target": 0.95,
+  "passed": true,
+  "limitations": [
+    "Synthetic English inputs; linguistic templates are shared within groups.",
+    "Not a field study or independent human usability assessment."
+  ],
+  "failures": []
+}
